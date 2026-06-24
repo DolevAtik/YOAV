@@ -106,114 +106,114 @@ const projects = [
 
   {
     id: 14,
-    title: '',
-    artist: 'Lo Amin',
+    title: 'לא אמין',
+    artist: 'אוראל רחמים',
     thumbnail: '/thumbnails/loAmin.jpg',
-    youtubeId: '',
+    youtubeId: 'cf8VBkMYZ2M',
   },
 
   {
     id: 15,
-    title: '',
+    title: 'סוגרת פינה',
     artist: 'May Twtik',
     thumbnail: '/thumbnails/mayTwtik.jpg',
-    youtubeId: '',
+    youtubeId: 'N2pGGDqUnrc',
   },
 
   {
     id: 16,
-    title: 'Million',
-    artist: '',
+    title: 'אחת למליון',
+    artist: 'רון חיון',
     thumbnail: '/thumbnails/milion.jpg',
-    youtubeId: '',
+    youtubeId: 'c_Uq3XnjzOc',
   },
 
   {
     id: 17,
-    title: 'Miss Olam',
-    artist: '',
+    title: 'מיס עולם',
+    artist: 'מאי טוויק',
     thumbnail: '/thumbnails/missOlam.jpg',
-    youtubeId: '',
+    youtubeId: '-jVTTw5ge9M',
   },
 
   {
     id: 18,
-    title: '',
+    title: 'יהלום מעבדה',
     artist: 'Nasrin',
     thumbnail: '/thumbnails/nasrin1.jpg',
-    youtubeId: '',
+    youtubeId: 'p6-eaS3BiTo',
   },
 
   {
     id: 19,
-    title: '',
+    title: 'שיר באוטו',
     artist: 'Nasrin',
     thumbnail: '/thumbnails/nasrin2.jpg',
-    youtubeId: '',
+    youtubeId: 'qfgojhJ70kY',
   },
 
   {
     id: 20,
-    title: 'Not Alone',
-    artist: '',
+    title: 'לא נשאר לבד',
+    artist: 'רביב כנר',
     thumbnail: '/thumbnails/notAlone.jpg',
-    youtubeId: '',
+    youtubeId: '_mxzi5hGALA',
   },
 
   {
     id: 21,
-    title: '',
+    title: 'אמאלה אבאלה',
     artist: 'Ori Saban',
     thumbnail: '/thumbnails/oriSabanjpg.jpg',
-    youtubeId: '',
+    youtubeId: 'S0wLw9S4vMw',
   },
 
   {
     id: 22,
-    title: 'Oy',
-    artist: '',
+    title:'אוי ואבוי',
+    artist: 'דודא גאנג',
     thumbnail: '/thumbnails/oy.jpg',
-    youtubeId: '',
+    youtubeId: 'sQI5GRj9m6g',
   },
 
   {
     id: 23,
-    title: 'Parparim',
-    artist: '',
+    title: 'פרפרים בבטן',
+    artist: 'ליעד מאיר ומורן מזור',
     thumbnail: '/thumbnails/parparim.jpg',
-    youtubeId: '',
+    youtubeId: 'GuVdnFfIriQ',
   },
 
   {
     id: 24,
-    title: 'Shrek',
-    artist: '',
+    title:'בלי פאניקה' ,
+    artist: 'חן פורתי שרק וגפן גרינברג',
     thumbnail: '/thumbnails/shrek.jpg',
-    youtubeId: '',
+    youtubeId: 'u3TeZXN3qcM',
   },
 
   {
     id: 25,
-    title: 'Soldier',
-    artist: '',
+    title: 'כיסופים',
+    artist: 'רביב כנר',
     thumbnail: '/thumbnails/soldier.jpg',
-    youtubeId: '',
+    youtubeId: 'bDFfm-VEcp0',
   },
 
   {
     id: 26,
-    title: 'Til Patzmar',
-    artist: '',
+    title: 'טיל פצמר',
+    artist: 'ליעד מאיר',
     thumbnail: '/thumbnails/tilPatzmar.png',
-    youtubeId: '',
+    youtubeId: 'MbNffFMvmjQ',
   },
 
   {
     id: 27,
-    title: 'Versim',
-    artist: '',
+    title: 'וורסים',
+    artist: 'ליעד מאיר',
     thumbnail: '/thumbnails/versim.jpg',
-    youtubeId: '',
+    youtubeId: 'QsKyG7MiXjM',
   },
 
 ]
