@@ -66,12 +66,6 @@ export default function VideoModal({ project, onClose }) {
               />
             </div>
 
-            {/* Meta */}
-            <div className="flex items-center gap-5 mt-4">
-              <span className="text-[9px] tracking-[0.25em] text-white/20 uppercase">{project.year}</span>
-              <div className="w-px h-2.5 bg-white/10" />
-              <span className="text-[9px] tracking-[0.25em] text-white/20 uppercase">{project.category}</span>
-            </div>
           </motion.div>
         </motion.div>
       )}

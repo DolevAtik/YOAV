@@ -62,11 +62,6 @@ function ProjectCard({ project, onClick, index }) {
         <h3 className="font-display font-semibold text-white text-lg sm:text-xl md:text-2xl leading-tight">
           {project.title}
         </h3>
-        <div className="flex items-center gap-3 mt-2">
-          <span className="text-[9px] tracking-[0.2em] text-white/25 uppercase">{project.year}</span>
-          <span className="w-px h-2.5 bg-white/15" />
-          <span className="text-[9px] tracking-[0.2em] text-white/25 uppercase">{project.category}</span>
-        </div>
       </div>
 
       {/* ── Gold border frame on hover ── */}

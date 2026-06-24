@@ -1,252 +1,219 @@
-// ─────────────────────────────────────────────────────────────────
-//  PROJECTS — מלא את youtubeId לכל פרויקט
-//  הקישור ביוטיוב: https://www.youtube.com/watch?v=XXXX
-//  ה-ID הוא החלק אחרי ?v=   לדוגמה: dQw4w9WgXcQ
-// ─────────────────────────────────────────────────────────────────
-
 const projects = [
 
   {
+    id: 1,
     title: 'Jar Jar',
     artist: 'Jet Vazana',
     thumbnail: '/thumbnails/JET VAZANA - JAR JAR.jpg',
-    youtubeId: '',   // 👈 הכנס כאן את ה-ID מיוטיוב
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: 'sTs7dgtpGL4',
   },
 
   {
+    id: 2,
     title: 'Seo Anthem',
     artist: 'Jet Vazana',
     thumbnail: '/thumbnails/JET VAZANA – SEO ANTHEM.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: 'TtQNcu_dTGw',
   },
 
   {
-    title: 'Niña',
-    artist: '',      // 👈 שם האמן
+    id: 3,
+    title: 'How You Like',
+    artist: 'Niña',
     thumbnail: '/thumbnails/Ni_a.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: 'gIlnsSF94fs',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
-    artist: 'Anna Zack',
+    id: 4,
+    title: 'ילד שמנת',
+    artist: 'אנה זק',
     thumbnail: '/thumbnails/annaZack.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: 'PQEoOvwX6hs',
   },
 
   {
+    id: 5,
     title: 'Bad Bitch',
-    artist: '',      // 👈 שם האמן
+    artist: 'ליעד מאיר',
     thumbnail: '/thumbnails/badbitch.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: 'L86-I2MafOA',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
-    artist: '',      // 👈 שם האמן
+    id: 6,
+    title: 'בסטיז',
+    artist: 'מאי טוויק',
     thumbnail: '/thumbnails/bestiz.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '_QpOQRI79aU',
   },
 
   {
-    title: 'Blood Eyes',
-    artist: '',      // 👈 שם האמן
+    id: 7,
+    title: 'עיניים דם',
+    artist: 'הגר יפת וחן פורתי',
     thumbnail: '/thumbnails/bloodEyes.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: 'cDRla28uN9k',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
+    id: 8,
+    title: 'פוטנציאל + זה זה',
     artist: 'Eden Darso',
     thumbnail: '/thumbnails/edenDarso.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '0vzLuc6U5J0',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
-    artist: '',      // 👈 שם האמן
+    id: 9,
+    title: 'רון חיון',
+    artist: 'FIT',
     thumbnail: '/thumbnails/fit.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: 'jSvbsndk4Jk',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
-    artist: 'Hen',
+    id: 10,
+    title: 'כל החבילה קומפלט',
+    artist: 'חן פורתי',
     thumbnail: '/thumbnails/hen.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: 'ocCZlamDX5M',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
-    artist: 'Hila',
+    id: 11,
+    title: 'Hila',
+    artist: 'רון חיון & ליעד מאיר',
     thumbnail: '/thumbnails/hila.png',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: 'J8UtBOyDj-c',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
+    id: 12,
+    title: '',
     artist: 'Liad',
     thumbnail: '/thumbnails/liadclipimg.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
+    id: 13,
+    title: '',
     artist: 'Liam Golan',
     thumbnail: '/thumbnails/liamGOlan.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
+    id: 14,
+    title: '',
     artist: 'Lo Amin',
     thumbnail: '/thumbnails/loAmin.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
+    id: 15,
+    title: '',
     artist: 'May Twtik',
     thumbnail: '/thumbnails/mayTwtik.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
+    id: 16,
     title: 'Million',
-    artist: '',      // 👈 שם האמן
+    artist: '',
     thumbnail: '/thumbnails/milion.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
+    id: 17,
     title: 'Miss Olam',
-    artist: '',      // 👈 שם האמן
+    artist: '',
     thumbnail: '/thumbnails/missOlam.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
-    title: '',       // 👈 שם הקליפ (1)
+    id: 18,
+    title: '',
     artist: 'Nasrin',
     thumbnail: '/thumbnails/nasrin1.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
-    title: '',       // 👈 שם הקליפ (2)
+    id: 19,
+    title: '',
     artist: 'Nasrin',
     thumbnail: '/thumbnails/nasrin2.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
+    id: 20,
     title: 'Not Alone',
-    artist: '',      // 👈 שם האמן
+    artist: '',
     thumbnail: '/thumbnails/notAlone.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
-    title: '',       // 👈 שם הקליפ
+    id: 21,
+    title: '',
     artist: 'Ori Saban',
     thumbnail: '/thumbnails/oriSabanjpg.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
+    id: 22,
     title: 'Oy',
-    artist: '',      // 👈 שם האמן
+    artist: '',
     thumbnail: '/thumbnails/oy.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
+    id: 23,
     title: 'Parparim',
-    artist: '',      // 👈 שם האמן
+    artist: '',
     thumbnail: '/thumbnails/parparim.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
+    id: 24,
     title: 'Shrek',
-    artist: '',      // 👈 שם האמן
+    artist: '',
     thumbnail: '/thumbnails/shrek.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
+    id: 25,
     title: 'Soldier',
-    artist: '',      // 👈 שם האמן
+    artist: '',
     thumbnail: '/thumbnails/soldier.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
+    id: 26,
     title: 'Til Patzmar',
-    artist: '',      // 👈 שם האמן
+    artist: '',
     thumbnail: '/thumbnails/tilPatzmar.png',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
   {
+    id: 27,
     title: 'Versim',
-    artist: '',      // 👈 שם האמן
+    artist: '',
     thumbnail: '/thumbnails/versim.jpg',
-    youtubeId: '',   // 👈
-    year: '2024',
-    category: 'Music Video',
+    youtubeId: '',
   },
 
 ]
