@@ -83,8 +83,8 @@ export default function Hero() {
             initial={{ y: '108%' }}
             animate={{ y: '0%' }}
             transition={{ duration: 1.3, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
-            className="font-display font-bold text-white"
-            style={{ fontSize: 'clamp(3.2rem, 14vw, 12rem)', letterSpacing: '-0.025em' }}
+            className="font-display font-bold text-white text-[3.2rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]"
+            style={{ letterSpacing: '-0.025em' }}
           >
             YOAV
           </motion.h1>
@@ -96,8 +96,8 @@ export default function Hero() {
             initial={{ y: '108%' }}
             animate={{ y: '0%' }}
             transition={{ duration: 1.3, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
-            className="font-display font-bold text-white"
-            style={{ fontSize: 'clamp(3.2rem, 14vw, 12rem)', letterSpacing: '-0.025em' }}
+            className="font-display font-bold text-white text-[3.2rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]"
+            style={{ letterSpacing: '-0.025em' }}
           >
             ZADIKOV
           </motion.h1>
