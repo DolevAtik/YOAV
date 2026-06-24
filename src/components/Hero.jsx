@@ -63,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.1 }}
-          className="flex items-center justify-center gap-5 mb-6 md:mb-14"
+          className="flex items-center justify-center gap-5 mb-3 md:mb-14"
         >
           <motion.div
             initial={{ scaleX: 0 }}
@@ -101,7 +101,7 @@ export default function Hero() {
         </div>
 
         {/* ZADIKOV — clip wipe up */}
-        <div className="overflow-hidden leading-[0.88] mb-8 md:mb-12">
+        <div className="overflow-hidden leading-[0.88] mb-4 md:mb-12">
           <motion.h1
             initial={{ y: '108%' }}
             animate={{ y: '0%' }}
@@ -122,7 +122,7 @@ export default function Hero() {
           animate={{ scaleX: 1 }}
           transition={{ duration: 1.4, delay: 0.75, ease: [0.25, 0.46, 0.45, 0.94] }}
           style={{ originX: 0.5 }}
-          className="w-full max-w-[200px] md:max-w-xs mx-auto h-px bg-white/10 mb-7 md:mb-9"
+          className="w-full max-w-[200px] md:max-w-xs mx-auto h-px bg-white/10 mb-3 md:mb-9"
         />
 
         {/* Tagline */}
@@ -130,7 +130,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="font-display italic text-white/35 text-base md:text-xl tracking-wide mb-10 md:mb-14"
+          className="font-display italic text-white/35 text-base md:text-xl tracking-wide mb-5 md:mb-14"
         >
           Creating visual stories through music, culture and cinema.
         </motion.p>
