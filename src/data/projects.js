@@ -66,8 +66,8 @@ const projects = [
 
   {
     id: 9,
-    title: 'רון חיון',
-    artist: 'FIT',
+    title: 'FIT',
+    artist: 'רון חיון',
     thumbnail: '/thumbnails/fit.jpg',
     youtubeId: 'jSvbsndk4Jk',
   },
