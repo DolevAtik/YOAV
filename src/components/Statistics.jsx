@@ -31,12 +31,12 @@ function Stat({ stat, index }) {
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.9, delay: index * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="text-center py-14 md:py-20 relative"
+      className="text-center py-8 md:py-20 px-1 relative"
     >
       {/* Number */}
       <div
         className="font-display font-bold text-[#D4AF37] leading-none mb-3"
-        style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)', letterSpacing: '-0.03em' }}
+        style={{ fontSize: 'clamp(1.8rem, 7vw, 7rem)', letterSpacing: '-0.03em' }}
       >
         {count}
         <span
@@ -46,7 +46,7 @@ function Stat({ stat, index }) {
           {stat.suffix}
         </span>
       </div>
-      <p className="text-[10px] tracking-[0.45em] text-white/30 uppercase">{stat.label}</p>
+      <p className="text-[8px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.45em] text-white/30 uppercase">{stat.label}</p>
 
       {/* Right divider — not on last */}
       {index < 2 && (
@@ -60,7 +60,7 @@ export default function Statistics() {
   return (
     <section className="border-t border-b border-white/[0.04] bg-[#0D0D0D]">
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-3">
           {stats.map((s, i) => <Stat key={s.label} stat={s} index={i} />)}
         </div>
       </div>
