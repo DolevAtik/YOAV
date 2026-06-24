@@ -40,9 +40,15 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="font-display font-semibold text-sm md:text-base tracking-[0.22em] text-white hover:text-[#D4AF37] transition-colors duration-300"
+            className="flex items-center"
+            aria-label="Yoav Zadikov — Home"
           >
-            YOAV ZADIKOV
+            <img
+              src="/yz-logo.png"
+              alt="YZ"
+              className="h-8 md:h-10 w-auto select-none hover:opacity-70 transition-opacity duration-300"
+              draggable={false}
+            />
           </button>
 
           {/* Desktop links */}
