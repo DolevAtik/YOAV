@@ -59,10 +59,20 @@
   white-space: nowrap;
   animation: ticker 10s linear infinite;
   will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .marquee-track {
+    animation-duration: 7s;
+  }
 }
 
 /* ── Clip-path wipe-up reveal (applied via JS) ── */
