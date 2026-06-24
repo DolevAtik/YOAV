@@ -77,7 +77,7 @@ export const stats = [
 
 // Update with real contact links
 export const socialLinks = {
-  instagram: 'https://instagram.com/',
+  instagram: 'https://www.instagram.com/yoavzadikov/',
   email: 'mailto:yoav@example.com',
-  whatsapp: 'https://wa.me/972500000000',
+  whatsapp: 'https://wa.me/972524336335',
 }
