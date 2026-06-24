@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { projects } from '../data/content'
+import projects from '../data/projects'
 import VideoModal from './VideoModal'
 import SectionTitle from './SectionTitle'
 
