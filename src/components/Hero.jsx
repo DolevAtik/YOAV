@@ -26,7 +26,7 @@ export default function Hero() {
     <section
       ref={ref}
       id="hero"
-      className="grain relative h-screen flex flex-col items-center justify-start md:justify-center pt-16 md:pt-0 overflow-hidden"
+      className="grain relative h-screen flex flex-col items-center justify-center overflow-hidden"
     >
       {/* ── Background ── */}
       <div className="absolute inset-0">
@@ -56,7 +56,7 @@ export default function Hero() {
       {/* ── Main content ── */}
       <motion.div
         style={{ y: titleY, opacity: contentOp }}
-        className="relative z-10 text-center px-4 w-full"
+        className="relative z-10 text-center px-4 w-full -mt-12 md:mt-0"
       >
         {/* Meta line */}
         <motion.div
@@ -166,7 +166,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, delay: 1.6 }}
-        className="absolute bottom-14 left-0 right-0 overflow-hidden border-t border-b border-white/[0.04] py-3 z-10"
+        className="absolute bottom-6 md:bottom-14 left-0 right-0 overflow-hidden border-t border-b border-white/[0.04] py-3 z-10"
       >
         <div className="marquee-track text-[9px] tracking-[0.35em] uppercase text-white/18">
           {TICKER_ITEMS.map((item, i) => (
