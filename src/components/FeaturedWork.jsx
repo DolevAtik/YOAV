@@ -31,7 +31,7 @@ function ProjectCard({ project, onClick, index }) {
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
       onClick={() => onClick(project)}
-      className="group relative overflow-hidden cursor-pointer bg-[#0f0f0f] aspect-video"
+      className="group relative overflow-hidden cursor-pointer bg-[#0f0f0f] aspect-square md:aspect-video"
     >
       {/* ── Thumbnail ── */}
       <img
