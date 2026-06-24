@@ -21,17 +21,7 @@ export default function About() {
             className="relative hidden lg:block"
           >
             <div className="relative aspect-[3/4] overflow-hidden">
-              {/* Replace with: <img src="/images/portrait.jpg" ... className="w-full h-full object-cover" /> */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1a1006] via-[#0f0f0f] to-[#0B0B0B]
-                              flex flex-col items-center justify-center gap-4">
-                <div className="w-20 h-20 rounded-full border border-[#D4AF37]/15 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth={0.6} className="w-9 h-9 opacity-25">
-                    <path strokeLinecap="round" strokeLinejoin="round"
-                      d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                  </svg>
-                </div>
-                <p className="text-[8px] tracking-[0.4em] text-white/10 uppercase">Portrait Placeholder</p>
-              </div>
+              <img src="/ABOUT.jpg" alt="Yoav Zadikov" className="w-full h-full object-cover" />
 
               {/* Corner marks */}
               <div className="absolute top-4 left-4 w-7 h-7 border-t border-l border-[#D4AF37]/30 pointer-events-none" />
