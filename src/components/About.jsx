@@ -20,7 +20,7 @@ export default function About() {
             transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="relative hidden lg:block"
           >
-            <div className="relative aspect-[3/4] overflow-hidden">
+            <div className="relative aspect-[3/4] overflow-hidden max-w-xs mx-auto">
               <img src="/ABOUT.jpg" alt="Yoav Zadikov" className="w-full h-full object-cover" />
 
               {/* Corner marks */}
@@ -49,7 +49,7 @@ export default function About() {
           >
             <div className="flex items-start justify-between lg:block">
               <div className="flex-1">
-                <SectionTitle label="Biography" title="ABOUT" index="03" />
+                <SectionTitle label="Biography" title="ABOUT" />
               </div>
               {/* Small portrait — mobile only */}
               <div className="block lg:hidden w-28 h-36 ml-4 shrink-0 overflow-hidden">
