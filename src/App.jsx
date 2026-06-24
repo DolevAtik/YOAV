@@ -3,7 +3,6 @@ import Loader from './components/Loader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import FeaturedWork from './components/FeaturedWork'
-import Artists from './components/Artists'
 import About from './components/About'
 import Statistics from './components/Statistics'
 import Contact from './components/Contact'
@@ -29,7 +28,6 @@ export default function App() {
             <Navbar />
             <Hero />
             <FeaturedWork />
-            <Artists />
             <About />
             <Statistics />
             <Contact />
