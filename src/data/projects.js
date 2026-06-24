@@ -101,7 +101,7 @@ const projects = [
     title: 'אוהב או שונא',
     artist: 'Liam Golan',
     thumbnail: '/thumbnails/liamGOlan.jpg',
-    youtubeId: 'v=eeGdz1Xjr2U',
+    youtubeId: 'eeGdz1Xjr2U',
   },
 
   {
