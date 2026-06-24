@@ -78,7 +78,7 @@ export default function FeaturedWork() {
     <>
       <section id="work" className="py-24 md:py-36 border-t border-white/[0.04]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-12 md:mb-16">
-          <SectionTitle label="Portfolio" title="FEATURED WORK" index="01" />
+          <SectionTitle label="Portfolio" title="My new releases" />
         </div>
 
         {/* Uniform 3-col grid */}

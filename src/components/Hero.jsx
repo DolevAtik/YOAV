@@ -134,7 +134,7 @@ export default function Hero() {
             className="group relative px-8 py-3.5 md:px-10 md:py-4 bg-[#D4AF37] text-[#0B0B0B] text-[11px] tracking-[0.3em] uppercase font-semibold overflow-hidden w-full sm:w-auto"
           >
             <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-              View Work
+              View Portfolio
             </span>
             <div className="absolute inset-0 bg-[#0B0B0B] -translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out" />
           </button>
