@@ -13,12 +13,12 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 items-center">
 
-          {/* ── Portrait ── */}
+          {/* ── Portrait (desktop only) ── */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="relative"
+            className="relative hidden lg:block"
           >
             <div className="relative aspect-[3/4] overflow-hidden">
               {/* Replace with: <img src="/images/portrait.jpg" ... className="w-full h-full object-cover" /> */}
@@ -57,7 +57,15 @@ export default function About() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.2, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <SectionTitle label="Biography" title="ABOUT" index="03" />
+            <div className="flex items-start justify-between lg:block">
+              <div className="flex-1">
+                <SectionTitle label="Biography" title="ABOUT" index="03" />
+              </div>
+              {/* Small portrait — mobile only */}
+              <div className="block lg:hidden w-28 h-36 ml-4 shrink-0 overflow-hidden">
+                <img src="/ABOUT.jpg" alt="Yoav Zadikov" className="w-full h-full object-cover" />
+              </div>
+            </div>
 
             <div className="mt-8 space-y-5">
               <p className="font-display italic text-white/45 text-lg md:text-xl leading-relaxed">

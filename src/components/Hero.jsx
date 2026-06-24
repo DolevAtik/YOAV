@@ -25,7 +25,7 @@ export default function Hero() {
     <section
       ref={ref}
       id="hero"
-      className="grain relative h-[100svh] flex flex-col overflow-hidden"
+      className="grain relative h-[82svh] md:h-[100svh] flex flex-col overflow-hidden"
     >
       {/* ── Background ── */}
       <div className="absolute inset-0">
