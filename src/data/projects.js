@@ -90,18 +90,18 @@ const projects = [
 
   {
     id: 12,
-    title: '',
-    artist: 'Liad',
+    title: 'פלואו של טמבל 2',
+    artist: 'רון חיון & ליעד מאיר',
     thumbnail: '/thumbnails/liadclipimg.jpg',
-    youtubeId: '',
+    youtubeId: 'p1Nhx-Dn3yw',
   },
 
   {
     id: 13,
-    title: '',
+    title: 'אוהב או שונא',
     artist: 'Liam Golan',
     thumbnail: '/thumbnails/liamGOlan.jpg',
-    youtubeId: '',
+    youtubeId: 'v=eeGdz1Xjr2U',
   },
 
   {
