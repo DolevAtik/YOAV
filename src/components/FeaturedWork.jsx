@@ -31,7 +31,7 @@ function ProjectCard({ project, onClick, index }) {
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
       onClick={() => onClick(project)}
-      className="group relative overflow-hidden cursor-pointer bg-[#0f0f0f] aspect-square md:aspect-video"
+      className="group relative overflow-hidden cursor-pointer bg-[#0f0f0f] aspect-[3/4] md:aspect-video"
     >
       {/* ── Thumbnail ── */}
       <img
@@ -87,7 +87,7 @@ export default function FeaturedWork() {
         </div>
 
         {/* Uniform 3-col grid */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-3 gap-1">
+        <div className="max-w-7xl mx-auto md:px-6 lg:px-10 grid grid-cols-3 gap-[2px]">
           {projects.map((p, i) => (
             <ProjectCard key={i} project={p} onClick={setActive} index={i} />
           ))}
