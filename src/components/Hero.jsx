@@ -26,7 +26,7 @@ export default function Hero() {
     <section
       ref={ref}
       id="hero"
-      className="grain relative h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="grain relative h-screen flex flex-col items-center justify-start md:justify-center pt-16 md:pt-0 overflow-hidden"
     >
       {/* ── Background ── */}
       <div className="absolute inset-0">
@@ -63,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.1 }}
-          className="flex items-center justify-center gap-5 mb-10 md:mb-14"
+          className="flex items-center justify-center gap-5 mb-6 md:mb-14"
         >
           <motion.div
             initial={{ scaleX: 0 }}
