@@ -4,10 +4,6 @@ import projects from '../data/projects'
 import VideoModal from './VideoModal'
 import SectionTitle from './SectionTitle'
 
-// Asymmetric col-spans for a 3-column grid:
-// Row 1: [2] [1]   Row 2: [1] [2]   Row 3: [2] [1]
-const COL_SPANS = [2, 1, 1, 2, 2, 1]
-
 function PlayButton() {
   return (
     <div className="w-14 h-14 rounded-full border border-[#D4AF37] flex items-center justify-center text-[#D4AF37]
@@ -23,7 +19,6 @@ function PlayButton() {
 function ProjectCard({ project, onClick, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
-  const span = COL_SPANS[index] ?? 1
 
   return (
     <motion.article
@@ -31,14 +26,12 @@ function ProjectCard({ project, onClick, index }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{
-        duration: 1.1,
-        delay: index * 0.08,
+        duration: 0.8,
+        delay: (index % 3) * 0.1,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
       onClick={() => onClick(project)}
-      className={`group relative overflow-hidden cursor-pointer bg-[#0f0f0f]
-        h-[200px] sm:h-[260px] lg:h-[340px]
-        ${span === 2 ? 'sm:col-span-2' : 'sm:col-span-1'}`}
+      className="group relative overflow-hidden cursor-pointer bg-[#0f0f0f] aspect-video"
     >
       {/* ── Thumbnail ── */}
       <img
@@ -93,10 +86,10 @@ export default function FeaturedWork() {
           <SectionTitle label="Portfolio" title="FEATURED WORK" index="01" />
         </div>
 
-        {/* Asymmetric 3-col grid, hairline gap */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-3 gap-1">
+        {/* Uniform 3-col grid */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
           {projects.map((p, i) => (
-            <ProjectCard key={p.id} project={p} onClick={setActive} index={i} />
+            <ProjectCard key={i} project={p} onClick={setActive} index={i} />
           ))}
         </div>
       </section>
