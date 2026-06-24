@@ -7,6 +7,7 @@ import About from './components/About'
 import Statistics from './components/Statistics'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import StructuredData from './components/StructuredData'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function App() {
@@ -16,6 +17,8 @@ export default function App() {
   return (
     <>
       <Loader onComplete={onLoaderComplete} />
+
+      <StructuredData />
 
       <AnimatePresence>
         {loaded && (

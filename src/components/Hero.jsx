@@ -77,30 +77,30 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* YOAV */}
-        <div className="overflow-hidden leading-[0.88] mb-1 md:mb-2">
-          <motion.h1
+        {/* YOAV ZADIKOV — single H1 split across two lines for visual effect */}
+        <h1 className="sr-only">Yoav Zadikov — Music Video Director &amp; Producer</h1>
+        <div className="overflow-hidden leading-[0.88] mb-1 md:mb-2" aria-hidden="true">
+          <motion.span
             initial={{ y: '108%' }}
             animate={{ y: '0%' }}
             transition={{ duration: 1.3, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
-            className="font-display font-bold text-white text-[3.2rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]"
+            className="block font-display font-bold text-white text-[3.2rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]"
             style={{ letterSpacing: '-0.025em' }}
           >
             YOAV
-          </motion.h1>
+          </motion.span>
         </div>
 
-        {/* ZADIKOV */}
-        <div className="overflow-hidden leading-[0.88] mb-[2vh] md:mb-12">
-          <motion.h1
+        <div className="overflow-hidden leading-[0.88] mb-[2vh] md:mb-12" aria-hidden="true">
+          <motion.span
             initial={{ y: '108%' }}
             animate={{ y: '0%' }}
             transition={{ duration: 1.3, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
-            className="font-display font-bold text-white text-[3.2rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]"
+            className="block font-display font-bold text-white text-[3.2rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]"
             style={{ letterSpacing: '-0.025em' }}
           >
             ZADIKOV
-          </motion.h1>
+          </motion.span>
         </div>
 
         {/* Divider */}
