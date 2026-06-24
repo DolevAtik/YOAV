@@ -1,0 +1,198 @@
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+
+const TICKER_ITEMS = [
+  'Director', '·', 'Producer', '·', 'Editor', '·',
+  'Motion Graphics', '·', 'Music Videos', '·', 'Commercials', '·',
+  'Visual Storytelling', '·', 'Cinematography', '·',
+  // repeated to fill the marquee (3 copies via CSS)
+  'Director', '·', 'Producer', '·', 'Editor', '·',
+  'Motion Graphics', '·', 'Music Videos', '·', 'Commercials', '·',
+  'Visual Storytelling', '·', 'Cinematography', '·',
+  'Director', '·', 'Producer', '·', 'Editor', '·',
+  'Motion Graphics', '·', 'Music Videos', '·', 'Commercials', '·',
+  'Visual Storytelling', '·', 'Cinematography', '·',
+]
+
+export default function Hero() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+  const titleY   = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
+  const contentOp = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+
+  const goto = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+
+  return (
+    <section
+      ref={ref}
+      id="hero"
+      className="grain relative h-screen flex flex-col items-center justify-center overflow-hidden"
+    >
+      {/* ── Background ── */}
+      <div className="absolute inset-0">
+        {/* Swap the block below with a real <video> when footage is available:
+        <video className="absolute inset-0 w-full h-full object-cover opacity-40"
+               autoPlay muted loop playsInline>
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video> */}
+        <div className="absolute inset-0 bg-[#0B0B0B]" />
+        {/* Slow-breathing amber light */}
+        <motion.div
+          className="absolute inset-0"
+          animate={{
+            background: [
+              'radial-gradient(ellipse 70% 50% at 25% 55%, #1c110400 0%, #1c110418 40%, transparent 70%)',
+              'radial-gradient(ellipse 70% 50% at 75% 45%, #1c110414 0%, #1c110408 40%, transparent 70%)',
+              'radial-gradient(ellipse 70% 50% at 25% 55%, #1c110400 0%, #1c110418 40%, transparent 70%)',
+            ],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        {/* Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/70 via-transparent to-[#0B0B0B]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0B]/60 via-transparent to-[#0B0B0B]/60" />
+      </div>
+
+      {/* ── Main content ── */}
+      <motion.div
+        style={{ y: titleY, opacity: contentOp }}
+        className="relative z-10 text-center px-4 w-full"
+      >
+        {/* Meta line */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className="flex items-center justify-center gap-5 mb-10 md:mb-14"
+        >
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1, delay: 0.15 }}
+            style={{ originX: 1 }}
+            className="w-10 h-px bg-[#D4AF37]/50"
+          />
+          <span className="text-[8px] sm:text-[9px] tracking-[0.55em] text-white/25 uppercase">
+            Est. 2016&nbsp;&nbsp;·&nbsp;&nbsp;Jerusalem, IL
+          </span>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1, delay: 0.15 }}
+            style={{ originX: 0 }}
+            className="w-10 h-px bg-[#D4AF37]/50"
+          />
+        </motion.div>
+
+        {/* YOAV — clip wipe up */}
+        <div className="overflow-hidden leading-[0.88] mb-1 md:mb-2">
+          <motion.h1
+            initial={{ y: '108%' }}
+            animate={{ y: '0%' }}
+            transition={{ duration: 1.3, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
+            className="font-display font-bold text-white"
+            style={{
+              fontSize: 'clamp(4.2rem, 16vw, 16rem)',
+              letterSpacing: '-0.025em',
+            }}
+          >
+            YOAV
+          </motion.h1>
+        </div>
+
+        {/* ZADIKOV — clip wipe up */}
+        <div className="overflow-hidden leading-[0.88] mb-8 md:mb-12">
+          <motion.h1
+            initial={{ y: '108%' }}
+            animate={{ y: '0%' }}
+            transition={{ duration: 1.3, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
+            className="font-display font-bold text-white"
+            style={{
+              fontSize: 'clamp(4.2rem, 16vw, 16rem)',
+              letterSpacing: '-0.025em',
+            }}
+          >
+            ZADIKOV
+          </motion.h1>
+        </div>
+
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.4, delay: 0.75, ease: [0.25, 0.46, 0.45, 0.94] }}
+          style={{ originX: 0.5 }}
+          className="w-full max-w-[200px] md:max-w-xs mx-auto h-px bg-white/10 mb-7 md:mb-9"
+        />
+
+        {/* Tagline */}
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="font-display italic text-white/35 text-base md:text-xl tracking-wide mb-10 md:mb-14"
+        >
+          Creating visual stories through music, culture and cinema.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 1.2 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3"
+        >
+          <button
+            onClick={() => goto('work')}
+            className="group relative px-10 py-4 bg-[#D4AF37] text-[#0B0B0B] text-[11px] tracking-[0.3em] uppercase font-semibold overflow-hidden w-full sm:w-auto"
+          >
+            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+              View Work
+            </span>
+            <div className="absolute inset-0 bg-[#0B0B0B] -translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out" />
+          </button>
+
+          <button
+            onClick={() => goto('contact')}
+            className="px-10 py-4 border border-white/12 text-white/50 text-[11px] tracking-[0.3em] uppercase hover:border-white/35 hover:text-white transition-all duration-400 w-full sm:w-auto"
+          >
+            Contact
+          </button>
+        </motion.div>
+      </motion.div>
+
+      {/* ── Ticker marquee ── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 1.6 }}
+        className="absolute bottom-14 left-0 right-0 overflow-hidden border-t border-b border-white/[0.04] py-3 z-10"
+      >
+        <div className="marquee-track text-[9px] tracking-[0.35em] uppercase text-white/18">
+          {TICKER_ITEMS.map((item, i) => (
+            <span
+              key={i}
+              className={item === '·' ? 'text-[#D4AF37]/35' : ''}
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* ── Scroll indicator ── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 2.2 }}
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10"
+      >
+        <motion.div
+          animate={{ scaleY: [1, 0.25, 1], opacity: [0.4, 0.1, 0.4] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+          className="w-px h-7 bg-white/30 mx-auto origin-top"
+        />
+      </motion.div>
+    </section>
+  )
+}
