@@ -73,7 +73,7 @@ export default function Hero() {
             className="w-10 h-px bg-[#D4AF37]/50"
           />
           <span className="text-[8px] sm:text-[9px] tracking-[0.55em] text-white/25 uppercase">
-            Est. 2016&nbsp;&nbsp;·&nbsp;&nbsp;Jerusalem, IL
+            2018
           </span>
           <motion.div
             initial={{ scaleX: 0 }}
