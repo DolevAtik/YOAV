@@ -87,7 +87,7 @@ export default function FeaturedWork() {
         </div>
 
         {/* Uniform 3-col grid */}
-        <div className="max-w-7xl mx-auto md:px-6 lg:px-10 grid grid-cols-3 gap-[2px]">
+        <div className="max-w-7xl mx-auto md:px-6 lg:px-10 grid grid-cols-2 md:grid-cols-3 gap-[2px]">
           {projects.map((p, i) => (
             <ProjectCard key={i} project={p} onClick={setActive} index={i} />
           ))}
