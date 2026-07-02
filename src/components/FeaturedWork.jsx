@@ -16,7 +16,7 @@ function PlayButton() {
   )
 }
 
-function ProjectCard({ project, onClick, index }) {
+function ProjectCard({ project, onClick, index, hiddenOnMobile }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
@@ -31,13 +31,15 @@ function ProjectCard({ project, onClick, index }) {
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
       onClick={() => onClick(project)}
-      className="group relative overflow-hidden cursor-pointer bg-[#0f0f0f] aspect-[3/4] md:aspect-video"
+      className={`group relative overflow-hidden cursor-pointer bg-[#0f0f0f] aspect-[3/4] md:aspect-video
+                  ${hiddenOnMobile ? 'hidden md:block' : ''}`}
     >
       {/* ── Thumbnail ── */}
       <img
         src={project.thumbnail}
         alt={`${project.title} — ${project.artist}`}
         loading="lazy"
+        style={project.thumbPosition ? { objectPosition: project.thumbPosition } : undefined}
         className="absolute inset-0 w-full h-full object-cover
                    transition-transform duration-700 ease-out group-hover:scale-[1.05]"
       />
@@ -56,7 +58,7 @@ function ProjectCard({ project, onClick, index }) {
       {/* ── Info bar — always visible, shifts up on hover ── */}
       <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6
                       group-hover:-translate-y-1 transition-transform duration-400 ease-out">
-        <p className="text-[9px] sm:text-[10px] tracking-[0.35em] text-[#5B82D6] uppercase mb-1.5">
+        <p className="font-display font-bold text-sm sm:text-base md:text-lg tracking-[0.15em] text-[#5B82D6] uppercase mb-1">
           {project.artist}
         </p>
         <h3 className="font-display font-semibold text-white text-lg sm:text-xl md:text-2xl leading-tight">
@@ -71,8 +73,11 @@ function ProjectCard({ project, onClick, index }) {
   )
 }
 
+const MOBILE_VISIBLE_COUNT = 8
+
 export default function FeaturedWork() {
   const [active, setActive] = useState(null)
+  const [showAll, setShowAll] = useState(false)
 
   return (
     <>
@@ -84,9 +89,28 @@ export default function FeaturedWork() {
         {/* Uniform 3-col grid */}
         <div className="max-w-7xl mx-auto md:px-6 lg:px-10 grid grid-cols-2 md:grid-cols-3 gap-[2px]">
           {projects.map((p, i) => (
-            <ProjectCard key={i} project={p} onClick={setActive} index={i} />
+            <ProjectCard
+              key={i}
+              project={p}
+              onClick={setActive}
+              index={i}
+              hiddenOnMobile={!showAll && i >= MOBILE_VISIBLE_COUNT}
+            />
           ))}
         </div>
+
+        {/* Show-more button — mobile only */}
+        {!showAll && projects.length > MOBILE_VISIBLE_COUNT && (
+          <div className="md:hidden flex justify-center mt-10 px-6">
+            <button
+              onClick={() => setShowAll(true)}
+              className="font-display px-8 py-3 border border-[#5B82D6]/40 text-[#5B82D6] text-xs tracking-[0.25em] uppercase
+                         hover:bg-[#5B82D6]/10 active:bg-[#5B82D6]/15 transition-colors duration-300"
+            >
+              Show More
+            </button>
+          </div>
+        )}
       </section>
 
       <VideoModal project={active} onClose={() => setActive(null)} />

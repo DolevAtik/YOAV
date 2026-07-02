@@ -59,7 +59,7 @@ const projects = [
   {
     id: 8,
     title: 'פוטנציאל + זה זה',
-    artist: 'Eden Darso',
+    artist: 'Eden Derso',
     thumbnail: '/thumbnails/edenDarso.jpg',
     youtubeId: '0vzLuc6U5J0',
   },
@@ -122,7 +122,7 @@ const projects = [
 
   {
     id: 16,
-    title: 'אחת למליון',
+    title: 'אחת ממיליון',
     artist: 'רון חיון',
     thumbnail: '/thumbnails/milion.jpg',
     youtubeId: 'c_Uq3XnjzOc',
@@ -141,6 +141,7 @@ const projects = [
     title: 'יהלום מעבדה',
     artist: 'Nasrin',
     thumbnail: '/thumbnails/nasrin1.jpg',
+    thumbPosition: '32% center',
     youtubeId: 'p6-eaS3BiTo',
   },
 
@@ -171,7 +172,7 @@ const projects = [
   {
     id: 22,
     title:'אוי ואבוי',
-    artist: 'דודא גאנג',
+    artist: 'רביד פלוטניק דודא גאנג',
     thumbnail: '/thumbnails/oy.jpg',
     youtubeId: 'sQI5GRj9m6g',
   },
