@@ -37,7 +37,7 @@ export default function VideoModal({ project, onClose }) {
             {/* Header */}
             <div className="flex items-end justify-between mb-5">
               <div>
-                <p className="text-[9px] tracking-[0.4em] text-[#D4AF37] uppercase mb-1.5">
+                <p className="text-[9px] tracking-[0.4em] text-[#5B82D6] uppercase mb-1.5">
                   {project.artist}
                 </p>
                 <h3 className="font-display font-semibold text-white text-2xl md:text-3xl leading-tight">

@@ -1,6 +1,51 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
+const THUMBS = [
+  'JET VAZANA - JAR JAR.jpg', 'JET VAZANA – SEO ANTHEM.jpg', 'Ni_a.jpg',
+  'annaZack.jpg', 'badbitch.jpg', 'bestiz.jpg', 'bloodEyes.jpg',
+  'edenDarso.jpg', 'fit.jpg', 'hen.jpg', 'hila.png', 'liadclipimg.jpg',
+  'liamGOlan.jpg', 'loAmin.jpg', 'mayTwtik.jpg', 'milion.jpg',
+  'missOlam.jpg', 'nasrin1.jpg', 'nasrin2.jpg', 'notAlone.jpg',
+  'oriSabanjpg.jpg', 'oy.jpg', 'parparim.jpg', 'shrek.jpg',
+  'soldier.jpg', 'tilPatzmar.png', 'versim.jpg',
+]
+
+const rotate = (arr, n) => [...arr.slice(n % arr.length), ...arr.slice(0, n % arr.length)]
+
+const POSTER_ROWS = [
+  { items: rotate(THUMBS, 0).slice(0, 9),  reverse: false, duration: 90 },
+  { items: rotate(THUMBS, 9).slice(0, 9),  reverse: true,  duration: 110 },
+  { items: rotate(THUMBS, 18).slice(0, 9), reverse: false, duration: 100 },
+  { items: rotate(THUMBS, 5).slice(0, 9),  reverse: true,  duration: 120 },
+  { items: rotate(THUMBS, 14).slice(0, 9), reverse: false, duration: 105 },
+  { items: rotate(THUMBS, 22).slice(0, 9), reverse: true,  duration: 95 },
+]
+
+function PosterRow({ items, reverse, duration }) {
+  return (
+    <div className="overflow-hidden">
+      <div
+        className={`poster-track gap-2 md:gap-4 pr-2 md:pr-4 ${reverse ? 'reverse' : ''}`}
+        style={{ animationDuration: `${duration}s` }}
+      >
+        {[...items, ...items].map((file, i) => (
+          <div key={i} className="shrink-0 w-[52vw] md:w-[22vw] aspect-video">
+            <img
+              src={`/thumbnails/hero/${encodeURIComponent(file.replace(/\.[^.]+$/, '.jpg'))}`}
+              alt=""
+              loading="eager"
+              decoding="async"
+              draggable="false"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 const TICKER_ITEMS = [
   'Director', '·', 'Producer', '·', 'Editor', '·',
   'Motion Graphics', '·', 'Music Videos', '·', 'Commercials', '·',
@@ -30,19 +75,26 @@ export default function Hero() {
       {/* ── Background ── */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[#0B0B0B]" />
-        <motion.div
-          className="absolute inset-0"
-          animate={{
-            background: [
-              'radial-gradient(ellipse 70% 50% at 25% 55%, #1c110400 0%, #1c110418 40%, transparent 70%)',
-              'radial-gradient(ellipse 70% 50% at 75% 45%, #1c110414 0%, #1c110408 40%, transparent 70%)',
-              'radial-gradient(ellipse 70% 50% at 25% 55%, #1c110400 0%, #1c110418 40%, transparent 70%)',
-            ],
-          }}
-          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-        />
+
+        {/* Poster collage — Marvel-intro style drifting rows */}
+        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div
+            className="absolute left-1/2 top-1/2 w-[160vw] -translate-x-1/2 -translate-y-1/2 -rotate-6
+                       flex flex-col gap-2 md:gap-4 opacity-[0.58]"
+          >
+            {POSTER_ROWS.map((row, i) => (
+              <PosterRow key={i} {...row} />
+            ))}
+          </div>
+        </div>
+
+        {/* Dark scrim so the type stays readable */}
+        <div className="absolute inset-0 bg-[#0B0B0B]/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_50%,#0B0B0B8C_0%,transparent_62%)]" />
+
+        <div className="hero-glow absolute inset-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/70 via-transparent to-[#0B0B0B]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0B]/60 via-transparent to-[#0B0B0B]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0B]/40 via-transparent to-[#0B0B0B]/40" />
       </div>
 
       {/* ── Main content — flex-1 centers within remaining space ── */}
@@ -51,44 +103,18 @@ export default function Hero() {
         className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 w-full
                    pt-14 md:pt-0"
       >
-        {/* 2018 */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.1 }}
-          className="flex items-center justify-center gap-5 mb-[2vh] md:mb-14"
-        >
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.15 }}
-            style={{ originX: 1 }}
-            className="w-10 h-px bg-[#D4AF37]/50"
-          />
-          <span className="text-[8px] sm:text-[9px] tracking-[0.55em] text-white/25 uppercase">
-            2018
-          </span>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.15 }}
-            style={{ originX: 0 }}
-            className="w-10 h-px bg-[#D4AF37]/50"
-          />
-        </motion.div>
-
-        {/* YOAV ZADIKOV — single H1 split across two lines for visual effect */}
-        <h1 className="sr-only">Yoav Zadikov — Music Video Director &amp; Producer</h1>
-        <div className="overflow-hidden leading-[0.88] mb-1 md:mb-2" aria-hidden="true">
-          <motion.span
+        {/* YZ PRODUCTIONS — single H1 split across two lines for visual effect */}
+        <h1 className="sr-only">YZ Productions — Music Video Director &amp; Producer</h1>
+        <div className="overflow-hidden mb-2 md:mb-4" aria-hidden="true">
+          <motion.img
+            src="/yz-icon.png"
+            alt=""
+            draggable="false"
             initial={{ y: '108%' }}
             animate={{ y: '0%' }}
             transition={{ duration: 1.3, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
-            className="block font-display font-bold text-white text-[3.2rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]"
-            style={{ letterSpacing: '-0.025em' }}
-          >
-            YOAV
-          </motion.span>
+            className="block w-auto mx-auto h-16 md:h-28 lg:h-36 xl:h-44"
+          />
         </div>
 
         <div className="overflow-hidden leading-[0.88] mb-[2vh] md:mb-12" aria-hidden="true">
@@ -96,10 +122,10 @@ export default function Hero() {
             initial={{ y: '108%' }}
             animate={{ y: '0%' }}
             transition={{ duration: 1.3, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
-            className="block font-display font-bold text-white text-[3.2rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]"
+            className="block font-display font-bold text-white text-[2.5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]"
             style={{ letterSpacing: '-0.025em' }}
           >
-            ZADIKOV
+            PRODUCTIONS
           </motion.span>
         </div>
 
@@ -131,12 +157,12 @@ export default function Hero() {
         >
           <button
             onClick={() => goto('work')}
-            className="group relative px-8 py-3.5 md:px-10 md:py-4 bg-[#D4AF37] text-[#0B0B0B] text-[11px] tracking-[0.3em] uppercase font-semibold overflow-hidden w-full sm:w-auto"
+            className="group relative px-8 py-3.5 md:px-10 md:py-4 bg-[#1E3A8A] text-white text-[11px] tracking-[0.3em] uppercase font-semibold overflow-hidden w-full sm:w-auto"
           >
-            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+            <span className="relative z-10 group-hover:text-[#1E3A8A] transition-colors duration-300">
               View Portfolio
             </span>
-            <div className="absolute inset-0 bg-[#0B0B0B] -translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out" />
+            <div className="absolute inset-0 bg-white -translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out" />
           </button>
           <button
             onClick={() => goto('contact')}
@@ -156,7 +182,7 @@ export default function Hero() {
       >
         <div className="marquee-track text-[9px] tracking-[0.35em] uppercase text-white/18">
           {TICKER_ITEMS.map((item, i) => (
-            <span key={i} className={item === '·' ? 'text-[#D4AF37]/35' : ''}>
+            <span key={i} className={item === '·' ? 'text-[#5B82D6]/35' : ''}>
               {item}
             </span>
           ))}

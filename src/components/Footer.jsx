@@ -10,7 +10,7 @@ export default function Footer() {
             className="font-display font-semibold text-white/80 tracking-[0.15em]"
             style={{ fontSize: 'clamp(0.9rem, 2vw, 1.1rem)' }}
           >
-            YOAV ZADIKOV
+            YZ PRODUCTIONS
           </p>
           <p className="text-[8px] tracking-[0.4em] text-white/20 uppercase mt-1">
             Director&nbsp;·&nbsp;Producer&nbsp;·&nbsp;Editor
@@ -18,7 +18,7 @@ export default function Footer() {
         </div>
 
         {/* Gold rule */}
-        <div className="hidden md:block flex-1 max-w-[80px] h-px bg-[#D4AF37]/15" />
+        <div className="hidden md:block flex-1 max-w-[80px] h-px bg-[#5B82D6]/15" />
 
         <p className="text-[8px] tracking-[0.25em] text-white/15 uppercase">
           © {new Date().getFullYear()} Yoav Zadikov. All rights reserved.

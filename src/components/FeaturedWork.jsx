@@ -6,7 +6,7 @@ import SectionTitle from './SectionTitle'
 
 function PlayButton() {
   return (
-    <div className="w-14 h-14 rounded-full border border-[#D4AF37] flex items-center justify-center text-[#D4AF37]
+    <div className="w-14 h-14 rounded-full border border-[#5B82D6] flex items-center justify-center text-[#5B82D6]
                     opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100
                     transition-all duration-500 ease-out">
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 ml-0.5">
@@ -56,7 +56,7 @@ function ProjectCard({ project, onClick, index }) {
       {/* ── Info bar — always visible, shifts up on hover ── */}
       <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6
                       group-hover:-translate-y-1 transition-transform duration-400 ease-out">
-        <p className="text-[9px] sm:text-[10px] tracking-[0.35em] text-[#D4AF37] uppercase mb-1.5">
+        <p className="text-[9px] sm:text-[10px] tracking-[0.35em] text-[#5B82D6] uppercase mb-1.5">
           {project.artist}
         </p>
         <h3 className="font-display font-semibold text-white text-lg sm:text-xl md:text-2xl leading-tight">
@@ -65,7 +65,7 @@ function ProjectCard({ project, onClick, index }) {
       </div>
 
       {/* ── Gold border frame on hover ── */}
-      <div className="absolute inset-0 border border-[#D4AF37]/0 group-hover:border-[#D4AF37]/25
+      <div className="absolute inset-0 border border-[#5B82D6]/0 group-hover:border-[#5B82D6]/25
                       transition-colors duration-500 pointer-events-none" />
     </motion.article>
   )

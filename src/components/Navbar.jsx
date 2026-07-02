@@ -42,7 +42,7 @@ export default function Navbar() {
             <img
               src="/yz-logo.png"
               alt="YZ"
-              className="h-7 sm:h-8 md:h-10 w-auto select-none hover:opacity-70 transition-opacity duration-300"
+              className="h-11 sm:h-14 md:h-[4.5rem] w-auto select-none hover:opacity-70 transition-opacity duration-300"
               draggable={false}
             />
           </button>
@@ -56,7 +56,7 @@ export default function Navbar() {
                 className="relative text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.2em] text-white/40 hover:text-white transition-colors duration-300 uppercase group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#D4AF37] group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#5B82D6] group-hover:w-full transition-all duration-300" />
               </button>
             ))}
           </div>

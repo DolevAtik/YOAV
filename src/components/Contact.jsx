@@ -40,9 +40,9 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
           className="flex items-center justify-center gap-5 mb-10"
         >
-          <div className="w-6 h-px bg-[#D4AF37]/50" />
-          <p className="text-[9px] tracking-[0.55em] text-[#D4AF37] uppercase">Get In Touch</p>
-          <div className="w-6 h-px bg-[#D4AF37]/50" />
+          <div className="w-6 h-px bg-[#5B82D6]/50" />
+          <p className="text-[9px] tracking-[0.55em] text-[#5B82D6] uppercase">Get In Touch</p>
+          <div className="w-6 h-px bg-[#5B82D6]/50" />
         </motion.div>
 
         {/* Headline */}
@@ -62,7 +62,7 @@ export default function Contact() {
             initial={{ y: '100%' }}
             animate={inView ? { y: '0%' } : {}}
             transition={{ duration: 1.1, delay: 0.18, ease: [0.76, 0, 0.24, 1] }}
-            className="font-display font-bold text-[#D4AF37] leading-tight"
+            className="font-display font-bold text-[#5B82D6] leading-tight"
             style={{ fontSize: 'clamp(2.2rem, 6vw, 5.5rem)', letterSpacing: '-0.025em' }}
           >
             Extraordinary
@@ -87,8 +87,8 @@ export default function Contact() {
               className={`flex items-center gap-3 px-9 py-4 text-[11px] tracking-[0.3em] uppercase
                 transition-all duration-300 w-full sm:w-auto justify-center ${
                 variant === 'filled'
-                  ? 'bg-[#D4AF37] text-[#0B0B0B] hover:bg-white font-semibold'
-                  : 'border border-white/12 text-white/50 hover:border-[#D4AF37]/50 hover:text-[#D4AF37]'
+                  ? 'bg-[#1E3A8A] text-white hover:bg-white hover:text-[#1E3A8A] font-semibold'
+                  : 'border border-white/12 text-white/50 hover:border-[#5B82D6]/50 hover:text-[#5B82D6]'
               }`}
             >
               {icon}

@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Tel Aviv typeface (Brutalist) — the official Tel Aviv–Jaffa city font by Fontef ── */
+@font-face {
+  font-family: 'Tel Aviv';
+  src: url('/fonts/telaviv-brutalistlight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tel Aviv';
+  src: url('/fonts/telaviv-brutalistregular.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tel Aviv';
+  src: url('/fonts/telaviv-brutalistbold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -10,15 +33,16 @@
   body {
     background-color: #0B0B0B;
     color: #ffffff;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Tel Aviv', system-ui, sans-serif;
+    font-weight: 300;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background-color: #D4AF37;
-    color: #0B0B0B;
+    background-color: #1E3A8A;
+    color: #ffffff;
   }
 
   ::-webkit-scrollbar {
@@ -28,7 +52,7 @@
     background: #0B0B0B;
   }
   ::-webkit-scrollbar-thumb {
-    background: #D4AF37;
+    background: #5B82D6;
   }
 }
 
@@ -72,6 +96,55 @@
 @media (max-width: 768px) {
   .marquee-track {
     animation-duration: 4s;
+  }
+}
+
+/* ── Hero ambient glow — two static gradients cross-fading on opacity only ── */
+@keyframes glow-fade {
+  0%, 100% { opacity: 1 }
+  50%      { opacity: 0 }
+}
+
+.hero-glow::before,
+.hero-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  animation: glow-fade 12s ease-in-out infinite;
+  will-change: opacity;
+}
+
+.hero-glow::before {
+  background: radial-gradient(ellipse 70% 50% at 25% 55%, #16295e18 0%, transparent 70%);
+}
+
+.hero-glow::after {
+  background: radial-gradient(ellipse 70% 50% at 75% 45%, #16295e14 0%, transparent 70%);
+  animation-delay: -6s;
+}
+
+/* ── Hero poster collage drift ── */
+@keyframes poster-drift {
+  from { transform: translateX(0) }
+  to   { transform: translateX(-50%) }
+}
+
+.poster-track {
+  display: flex;
+  width: max-content;
+  animation: poster-drift linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.poster-track.reverse {
+  animation-direction: reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster-track {
+    animation: none;
   }
 }
 

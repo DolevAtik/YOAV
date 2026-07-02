@@ -218,4 +218,21 @@ const projects = [
 
 ]
 
-export default projects
+// Fixed display order for the first releases, by project id:
+// 1. נסרין – שיר באוטו, 2. רון חיון – אחת למליון, 3. אנה זק – ילד שמנת,
+// 4. ליאם גולן – אוהב או שונא, 5. רביב כנר – כיסופים, 6. דודא גאנג – אוי ואבוי,
+// 7. עדן דרסו – פוטנציאל, 8. Jet Vazana – Jar Jar. The rest are shuffled on each load.
+const pinnedIds = [19, 16, 4, 13, 25, 22, 8, 1]
+
+const pinned = pinnedIds
+  .map((id) => projects.find((p) => p.id === id))
+  .filter(Boolean)
+
+const rest = projects.filter((p) => !pinnedIds.includes(p.id))
+
+for (let i = rest.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1))
+  ;[rest[i], rest[j]] = [rest[j], rest[i]]
+}
+
+export default [...pinned, ...rest]

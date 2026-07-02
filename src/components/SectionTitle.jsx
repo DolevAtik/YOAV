@@ -15,10 +15,10 @@ export default function SectionTitle({ label, title, index, centered = false }) 
         className={`flex items-center gap-4 mb-4 ${centered ? 'justify-center' : ''}`}
       >
         {index && (
-          <span className="font-display font-light text-[#D4AF37]/40 text-sm tabular-nums">{index}</span>
+          <span className="font-display font-light text-[#5B82D6]/40 text-sm tabular-nums">{index}</span>
         )}
-        <div className="w-5 h-px bg-[#D4AF37]/50" />
-        <p className="text-[9px] tracking-[0.5em] text-[#D4AF37] uppercase font-medium">{label}</p>
+        <div className="w-5 h-px bg-[#5B82D6]/50" />
+        <p className="text-[9px] tracking-[0.5em] text-[#5B82D6] uppercase font-medium">{label}</p>
       </motion.div>
 
       {/* Title — wipe-up reveal */}

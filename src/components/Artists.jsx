@@ -14,7 +14,7 @@ function ArtistRow({ artist, index }) {
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.07, ease: [0.25, 0.46, 0.45, 0.94] }}
       className="group flex items-center justify-between py-5 md:py-6 border-b border-white/[0.05]
-                 hover:border-[#D4AF37]/20 transition-colors duration-400 cursor-default"
+                 hover:border-[#5B82D6]/20 transition-colors duration-400 cursor-default"
     >
       <div className="flex items-center gap-5 md:gap-8">
         {/* Index number */}
@@ -32,11 +32,11 @@ function ArtistRow({ artist, index }) {
       </div>
 
       <div className="flex items-center gap-6">
-        <span className="hidden sm:block text-[10px] tracking-[0.25em] text-white/25 uppercase group-hover:text-[#D4AF37]/60 transition-colors duration-300">
+        <span className="hidden sm:block text-[10px] tracking-[0.25em] text-white/25 uppercase group-hover:text-[#5B82D6]/60 transition-colors duration-300">
           {artist.genre}
         </span>
         {/* Arrow */}
-        <span className="text-white/10 group-hover:text-[#D4AF37]/60 group-hover:translate-x-1 transition-all duration-300">
+        <span className="text-white/10 group-hover:text-[#5B82D6]/60 group-hover:translate-x-1 transition-all duration-300">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1} className="w-4 h-4">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
           </svg>

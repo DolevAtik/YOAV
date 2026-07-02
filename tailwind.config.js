@@ -7,12 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: '#D4AF37',
+        navy: {
+          DEFAULT: '#1E3A8A',
+          light: '#5B82D6',
+          deep: '#0D1526',
+        },
         dark: '#0B0B0B',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['"Tel Aviv"', 'system-ui', 'sans-serif'],
+        display: ['"Tel Aviv"', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

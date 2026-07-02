@@ -35,12 +35,12 @@ function Stat({ stat, index }) {
     >
       {/* Number */}
       <div
-        className="font-display font-bold text-[#D4AF37] leading-none mb-3"
+        className="font-display font-bold text-[#5B82D6] leading-none mb-3"
         style={{ fontSize: 'clamp(1.8rem, 7vw, 7rem)', letterSpacing: '-0.03em' }}
       >
         {count}
         <span
-          className="text-[#D4AF37]/60"
+          className="text-[#5B82D6]/60"
           style={{ fontSize: '0.5em', letterSpacing: '0' }}
         >
           {stat.suffix}
@@ -58,7 +58,7 @@ function Stat({ stat, index }) {
 
 export default function Statistics() {
   return (
-    <section className="border-t border-b border-white/[0.04] bg-[#0D0D0D]">
+    <section className="border-t border-b border-white/[0.04] bg-[#0D1526]">
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-3">
           {stats.map((s, i) => <Stat key={s.label} stat={s} index={i} />)}
