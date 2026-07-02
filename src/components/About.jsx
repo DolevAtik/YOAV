@@ -100,12 +100,12 @@ function PressFeature() {
         {/* Stage photo strip */}
         <div className="group relative mt-9 overflow-hidden bg-[#0f0f0f]">
           <img
-            src="/press-stage.jpg"
+            src="/press-stage2.jpeg"
             alt="Yoav Zadikov speaking on stage at the Double Lives premiere event"
-            width="1080"
-            height="604"
+            width="4344"
+            height="7728"
             loading="lazy"
-            className="w-full aspect-[16/7] object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            className="w-full aspect-[16/7] object-cover object-[50%_61%] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/70 via-transparent to-transparent pointer-events-none" />
           <div className="absolute inset-0 border border-[#5B82D6]/0 group-hover:border-[#5B82D6]/25 transition-colors duration-500 pointer-events-none" />
