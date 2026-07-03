@@ -39,8 +39,12 @@ function ProjectCard({ project, onClick, index, hiddenOnMobile }) {
         src={project.thumbnail}
         alt={`${project.title} — ${project.artist}`}
         loading="lazy"
-        style={project.thumbPosition ? { objectPosition: project.thumbPosition } : undefined}
+        style={{
+          '--tp-mobile': project.thumbPositionMobile || project.thumbPosition || '50% 50%',
+          '--tp-desktop': project.thumbPosition || '50% 50%',
+        }}
         className="absolute inset-0 w-full h-full object-cover
+                   [object-position:var(--tp-mobile)] md:[object-position:var(--tp-desktop)]
                    transition-transform duration-700 ease-out group-hover:scale-[1.05]"
       />
 

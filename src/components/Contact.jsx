@@ -31,7 +31,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-28 md:py-44 border-t border-white/[0.04]">
-      <div ref={ref} className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+      <div ref={ref} className="max-w-6xl mx-auto px-6 lg:px-10 text-center">
 
         {/* Label */}
         <motion.div
@@ -52,7 +52,7 @@ export default function Contact() {
             animate={inView ? { y: '0%' } : {}}
             transition={{ duration: 1.1, delay: 0.1, ease: [0.76, 0, 0.24, 1] }}
             className="font-display font-bold text-white leading-tight"
-            style={{ fontSize: 'clamp(2.2rem, 6vw, 5.5rem)', letterSpacing: '-0.025em' }}
+            style={{ fontSize: 'clamp(1.6rem, 6vw, 5.5rem)', letterSpacing: '-0.025em' }}
           >
             Let's Create Something
           </motion.h2>
@@ -63,7 +63,7 @@ export default function Contact() {
             animate={inView ? { y: '0%' } : {}}
             transition={{ duration: 1.1, delay: 0.18, ease: [0.76, 0, 0.24, 1] }}
             className="font-display font-bold text-[#5B82D6] leading-tight"
-            style={{ fontSize: 'clamp(2.2rem, 6vw, 5.5rem)', letterSpacing: '-0.025em' }}
+            style={{ fontSize: 'clamp(1.6rem, 6vw, 5.5rem)', letterSpacing: '-0.025em' }}
           >
             Extraordinary
           </motion.h2>

@@ -143,7 +143,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="font-display italic text-white/35 text-sm md:text-xl tracking-wide mb-[3vh] md:mb-14"
+          className="font-display italic text-white/75 text-sm md:text-xl tracking-wide mb-[3vh] md:mb-14 [text-shadow:0_1px_10px_rgba(0,0,0,0.7)]"
         >
           Creating visual stories through music, culture and cinema.
         </motion.p>
@@ -157,7 +157,7 @@ export default function Hero() {
         >
           <button
             onClick={() => goto('work')}
-            className="group relative px-8 py-3.5 md:px-10 md:py-4 bg-[#1E3A8A] text-white text-[11px] tracking-[0.3em] uppercase font-semibold overflow-hidden w-full sm:w-auto"
+            className="group relative px-8 py-3.5 md:px-10 md:py-4 bg-[#1E3A8A]/70 backdrop-blur-sm text-white text-[11px] tracking-[0.3em] uppercase font-semibold overflow-hidden w-full sm:w-auto"
           >
             <span className="relative z-10 group-hover:text-[#1E3A8A] transition-colors duration-300">
               View Portfolio
@@ -166,7 +166,7 @@ export default function Hero() {
           </button>
           <button
             onClick={() => goto('contact')}
-            className="px-8 py-3.5 md:px-10 md:py-4 border border-white/12 text-white/50 text-[11px] tracking-[0.3em] uppercase hover:border-white/35 hover:text-white transition-all duration-400 w-full sm:w-auto"
+            className="px-8 py-3.5 md:px-10 md:py-4 border border-white/40 bg-[#0B0B0B]/40 backdrop-blur-sm text-white/90 text-[11px] tracking-[0.3em] uppercase hover:border-white hover:text-white transition-all duration-400 w-full sm:w-auto"
           >
             Contact
           </button>

@@ -70,14 +70,14 @@ export const artists = [
 ]
 
 export const stats = [
-  { value: 50, suffix: '+', label: 'Music Videos' },
-  { value: 10, suffix: 'M+', label: 'Views' },
-  { value: 100, suffix: '+', label: 'Production Days' },
+  { value: 80, suffix: '+', label: 'Music Videos' },
+  { value: 100, suffix: 'M+', label: 'Views' },
+  { value: 300, suffix: '+', label: 'Production Days' },
 ]
 
 // Update with real contact links
 export const socialLinks = {
   instagram: 'https://www.instagram.com/yoavzadikov/',
-  email: 'mailto:yoav@example.com',
+  email: 'mailto:yoavzadikov1@gmail.com',
   whatsapp: 'https://wa.me/972524336335',
 }

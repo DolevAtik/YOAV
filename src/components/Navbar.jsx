@@ -53,7 +53,7 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => goto(link.href)}
-                className="relative text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.2em] text-white/40 hover:text-white transition-colors duration-300 uppercase group"
+                className="relative text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.2em] text-white/80 hover:text-white transition-colors duration-300 uppercase group [text-shadow:0_1px_8px_rgba(0,0,0,0.6)]"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#5B82D6] group-hover:w-full transition-all duration-300" />

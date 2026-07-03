@@ -29,6 +29,7 @@ const projects = [
     title: 'ילד שמנת',
     artist: 'אנה זק',
     thumbnail: '/thumbnails/annaZack.jpg',
+    thumbPositionMobile: '35% center',
     youtubeId: 'PQEoOvwX6hs',
   },
 
@@ -101,6 +102,7 @@ const projects = [
     title: 'אוהב או שונא',
     artist: 'Liam Golan',
     thumbnail: '/thumbnails/liamGOlan.jpg',
+    thumbPositionMobile: '44% center',
     youtubeId: 'eeGdz1Xjr2U',
   },
 
@@ -109,6 +111,7 @@ const projects = [
     title: 'לא אמין',
     artist: 'אוראל רחמים',
     thumbnail: '/thumbnails/loAmin.jpg',
+    thumbPositionMobile: '33% center',
     youtubeId: 'cf8VBkMYZ2M',
   },
 
@@ -150,6 +153,7 @@ const projects = [
     title: 'שיר באוטו',
     artist: 'Nasrin',
     thumbnail: '/thumbnails/nasrin2.jpg',
+    thumbPositionMobile: '40% center',
     youtubeId: 'qfgojhJ70kY',
   },
 
@@ -166,6 +170,7 @@ const projects = [
     title: 'אמאלה אבאלה',
     artist: 'Ori Saban',
     thumbnail: '/thumbnails/oriSabanjpg.jpg',
+    thumbPositionMobile: '76% center',
     youtubeId: 'S0wLw9S4vMw',
   },
 
