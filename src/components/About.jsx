@@ -93,7 +93,7 @@ function PressFeature() {
         <p className="mt-7 text-sm text-white/35 leading-[1.9] max-w-xl">
           In a special interview with Reshet 13, Yoav opens up about directing
           "Double Lives" (חיים כפולים) — the most successful micro-drama in Israel —
-          becoming the youngest director in the country to helm a series for a major
+          becoming the youngest director in the country to create a series for a major
           broadcaster, the fearless leap into deep water, and what's next.
         </p>
 
