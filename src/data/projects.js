@@ -1,9 +1,11 @@
+// `artist` is bilingual: { en, he } — resolved from the active language.
+// `title` (the song name) stays as released, in its original language.
 const projects = [
 
   {
     id: 1,
     title: 'Jar Jar',
-    artist: 'Jet Vazana',
+    artist: { en: 'Jet Vazana', he: 'ג׳ט ואזאנה' },
     thumbnail: '/thumbnails/JET VAZANA - JAR JAR.jpg',
     youtubeId: 'sTs7dgtpGL4',
   },
@@ -11,7 +13,7 @@ const projects = [
   {
     id: 2,
     title: 'Seo Anthem',
-    artist: 'Jet Vazana',
+    artist: { en: 'Jet Vazana', he: 'ג׳ט ואזאנה' },
     thumbnail: '/thumbnails/JET VAZANA – SEO ANTHEM.jpg',
     youtubeId: 'TtQNcu_dTGw',
   },
@@ -19,7 +21,7 @@ const projects = [
   {
     id: 3,
     title: 'How You Like',
-    artist: 'Niña',
+    artist: { en: 'Niña', he: 'נינה' },
     thumbnail: '/thumbnails/Ni_a.jpg',
     youtubeId: 'gIlnsSF94fs',
   },
@@ -27,7 +29,7 @@ const projects = [
   {
     id: 4,
     title: 'ילד שמנת',
-    artist: 'אנה זק',
+    artist: { en: 'Anna Zak', he: 'אנה זק' },
     thumbnail: '/thumbnails/annaZack.jpg',
     thumbPositionMobile: '35% center',
     youtubeId: 'PQEoOvwX6hs',
@@ -36,7 +38,7 @@ const projects = [
   {
     id: 5,
     title: 'Bad Bitch',
-    artist: 'ליעד מאיר',
+    artist: { en: 'Liad Meir', he: 'ליעד מאיר' },
     thumbnail: '/thumbnails/badbitch.jpg',
     youtubeId: 'L86-I2MafOA',
   },
@@ -44,7 +46,7 @@ const projects = [
   {
     id: 6,
     title: 'בסטיז',
-    artist: 'מאי טוויק',
+    artist: { en: 'May Twtik', he: 'מאי טוויק' },
     thumbnail: '/thumbnails/bestiz.jpg',
     youtubeId: '_QpOQRI79aU',
   },
@@ -52,7 +54,7 @@ const projects = [
   {
     id: 7,
     title: 'עיניים דם',
-    artist: 'הגר יפת וחן פורתי',
+    artist: { en: 'Hagar Yefet & Chen Porati', he: 'הגר יפת וחן פורתי' },
     thumbnail: '/thumbnails/bloodEyes.jpg',
     youtubeId: 'cDRla28uN9k',
   },
@@ -60,7 +62,7 @@ const projects = [
   {
     id: 8,
     title: 'פוטנציאל + זה זה',
-    artist: 'Eden Derso',
+    artist: { en: 'Eden Derso', he: 'עדן דרסו' },
     thumbnail: '/thumbnails/edenDarso.jpg',
     youtubeId: '0vzLuc6U5J0',
   },
@@ -68,7 +70,7 @@ const projects = [
   {
     id: 9,
     title: 'FIT',
-    artist: 'רון חיון',
+    artist: { en: 'Ron Hayun', he: 'רון חיון' },
     thumbnail: '/thumbnails/fit.jpg',
     youtubeId: 'jSvbsndk4Jk',
   },
@@ -76,7 +78,7 @@ const projects = [
   {
     id: 10,
     title: 'כל החבילה קומפלט',
-    artist: 'חן פורתי',
+    artist: { en: 'Chen Porati', he: 'חן פורתי' },
     thumbnail: '/thumbnails/hen.jpg',
     youtubeId: 'ocCZlamDX5M',
   },
@@ -84,7 +86,7 @@ const projects = [
   {
     id: 11,
     title: 'Hila',
-    artist: 'רון חיון & ליעד מאיר',
+    artist: { en: 'Ron Hayun & Liad Meir', he: 'רון חיון & ליעד מאיר' },
     thumbnail: '/thumbnails/hila.png',
     youtubeId: 'J8UtBOyDj-c',
   },
@@ -92,7 +94,7 @@ const projects = [
   {
     id: 12,
     title: 'פלואו של טמבל 2',
-    artist: 'רון חיון & ליעד מאיר',
+    artist: { en: 'Ron Hayun & Liad Meir', he: 'רון חיון & ליעד מאיר' },
     thumbnail: '/thumbnails/liadclipimg.jpg',
     youtubeId: 'p1Nhx-Dn3yw',
   },
@@ -100,7 +102,7 @@ const projects = [
   {
     id: 13,
     title: 'אוהב או שונא',
-    artist: 'Liam Golan',
+    artist: { en: 'Liam Golan', he: 'ליאם גולן' },
     thumbnail: '/thumbnails/liamGOlan.jpg',
     thumbPositionMobile: '44% center',
     youtubeId: 'eeGdz1Xjr2U',
@@ -109,7 +111,7 @@ const projects = [
   {
     id: 14,
     title: 'לא אמין',
-    artist: 'אוראל רחמים',
+    artist: { en: 'Orel Rahamim', he: 'אוראל רחמים' },
     thumbnail: '/thumbnails/loAmin.jpg',
     thumbPositionMobile: '33% center',
     youtubeId: 'cf8VBkMYZ2M',
@@ -118,7 +120,7 @@ const projects = [
   {
     id: 15,
     title: 'סוגרת פינה',
-    artist: 'May Twtik',
+    artist: { en: 'May Twtik', he: 'מאי טוויק' },
     thumbnail: '/thumbnails/mayTwtik.jpg',
     youtubeId: 'N2pGGDqUnrc',
   },
@@ -126,7 +128,7 @@ const projects = [
   {
     id: 16,
     title: 'אחת ממיליון',
-    artist: 'רון חיון',
+    artist: { en: 'Ron Hayun', he: 'רון חיון' },
     thumbnail: '/thumbnails/milion.jpg',
     youtubeId: 'c_Uq3XnjzOc',
   },
@@ -134,7 +136,7 @@ const projects = [
   {
     id: 17,
     title: 'מיס עולם',
-    artist: 'מאי טוויק',
+    artist: { en: 'May Twtik', he: 'מאי טוויק' },
     thumbnail: '/thumbnails/missOlam.jpg',
     youtubeId: '-jVTTw5ge9M',
   },
@@ -142,7 +144,7 @@ const projects = [
   {
     id: 18,
     title: 'יהלום מעבדה',
-    artist: 'Nasrin',
+    artist: { en: 'Nasrin', he: 'נסרין' },
     thumbnail: '/thumbnails/nasrin1.jpg',
     thumbPosition: '32% center',
     youtubeId: 'p6-eaS3BiTo',
@@ -151,7 +153,7 @@ const projects = [
   {
     id: 19,
     title: 'שיר באוטו',
-    artist: 'Nasrin',
+    artist: { en: 'Nasrin', he: 'נסרין' },
     thumbnail: '/thumbnails/nasrin2.jpg',
     thumbPositionMobile: '40% center',
     youtubeId: 'qfgojhJ70kY',
@@ -160,7 +162,7 @@ const projects = [
   {
     id: 20,
     title: 'לא נשאר לבד',
-    artist: 'רביב כנר',
+    artist: { en: 'Raviv Kaner', he: 'רביב כנר' },
     thumbnail: '/thumbnails/notAlone.jpg',
     youtubeId: '_mxzi5hGALA',
   },
@@ -168,7 +170,7 @@ const projects = [
   {
     id: 21,
     title: 'אמאלה אבאלה',
-    artist: 'Ori Saban',
+    artist: { en: 'Ori Saban', he: 'אורי סבן' },
     thumbnail: '/thumbnails/oriSabanjpg.jpg',
     thumbPositionMobile: '76% center',
     youtubeId: 'S0wLw9S4vMw',
@@ -177,7 +179,7 @@ const projects = [
   {
     id: 22,
     title:'אוי ואבוי',
-    artist: 'רביד פלוטניק דודא גאנג',
+    artist: { en: 'Ravid Plotnik & Duda Gang', he: 'רביד פלוטניק דודא גאנג' },
     thumbnail: '/thumbnails/oy.jpg',
     youtubeId: 'sQI5GRj9m6g',
   },
@@ -185,7 +187,7 @@ const projects = [
   {
     id: 23,
     title: 'פרפרים בבטן',
-    artist: 'ליעד מאיר ומורן מזור',
+    artist: { en: 'Liad Meir & Moran Mazor', he: 'ליעד מאיר ומורן מזור' },
     thumbnail: '/thumbnails/parparim.jpg',
     youtubeId: 'GuVdnFfIriQ',
   },
@@ -193,7 +195,7 @@ const projects = [
   {
     id: 24,
     title:'בלי פאניקה' ,
-    artist: 'חן פורתי שרק וגפן גרינברג',
+    artist: { en: 'Chen Porati, Shrek & Gefen Greenberg', he: 'חן פורתי שרק וגפן גרינברג' },
     thumbnail: '/thumbnails/shrek.jpg',
     youtubeId: 'u3TeZXN3qcM',
   },
@@ -201,7 +203,7 @@ const projects = [
   {
     id: 25,
     title: 'כיסופים',
-    artist: 'רביב כנר',
+    artist: { en: 'Raviv Kaner', he: 'רביב כנר' },
     thumbnail: '/thumbnails/soldier.jpg',
     youtubeId: 'bDFfm-VEcp0',
   },
@@ -209,7 +211,7 @@ const projects = [
   {
     id: 26,
     title: 'טיל פצמר',
-    artist: 'ליעד מאיר',
+    artist: { en: 'Liad Meir', he: 'ליעד מאיר' },
     thumbnail: '/thumbnails/tilPatzmar.png',
     youtubeId: 'MbNffFMvmjQ',
   },
@@ -217,7 +219,7 @@ const projects = [
   {
     id: 27,
     title: 'וורסים',
-    artist: 'ליעד מאיר',
+    artist: { en: 'Liad Meir', he: 'ליעד מאיר' },
     thumbnail: '/thumbnails/versim.jpg',
     youtubeId: 'QsKyG7MiXjM',
   },

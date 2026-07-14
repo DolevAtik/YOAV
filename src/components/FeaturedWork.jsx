@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion'
 import projects from '../data/projects'
 import VideoModal from './VideoModal'
 import SectionTitle from './SectionTitle'
+import { useLanguage } from '../i18n/LanguageContext'
 
 function PlayButton() {
   return (
@@ -19,6 +20,8 @@ function PlayButton() {
 function ProjectCard({ project, onClick, index, hiddenOnMobile }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
+  const { lang } = useLanguage()
+  const artist = project.artist[lang]
 
   return (
     <motion.article
@@ -37,7 +40,7 @@ function ProjectCard({ project, onClick, index, hiddenOnMobile }) {
       {/* ── Thumbnail ── */}
       <img
         src={project.thumbnail}
-        alt={`${project.title} — ${project.artist}`}
+        alt={`${project.title} · ${artist}`}
         loading="lazy"
         style={{
           '--tp-mobile': project.thumbPositionMobile || project.thumbPosition || '50% 50%',
@@ -63,7 +66,7 @@ function ProjectCard({ project, onClick, index, hiddenOnMobile }) {
       <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6
                       group-hover:-translate-y-1 transition-transform duration-400 ease-out">
         <p className="font-display font-bold text-sm sm:text-base md:text-lg tracking-[0.15em] text-[#5B82D6] uppercase mb-1">
-          {project.artist}
+          {artist}
         </p>
         <h3 className="font-display font-semibold text-white text-lg sm:text-xl md:text-2xl leading-tight">
           {project.title}
@@ -82,12 +85,13 @@ const MOBILE_VISIBLE_COUNT = 8
 export default function FeaturedWork() {
   const [active, setActive] = useState(null)
   const [showAll, setShowAll] = useState(false)
+  const { t } = useLanguage()
 
   return (
     <>
       <section id="work" className="py-24 md:py-36 border-t border-white/[0.04]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-12 md:mb-16">
-          <SectionTitle label="Portfolio" title="My new releases" />
+          <SectionTitle label={t.work.label} title={t.work.title} />
         </div>
 
         {/* Uniform 3-col grid */}
@@ -111,7 +115,7 @@ export default function FeaturedWork() {
               className="font-display px-8 py-3 border border-[#5B82D6]/40 text-[#5B82D6] text-xs tracking-[0.25em] uppercase
                          hover:bg-[#5B82D6]/10 active:bg-[#5B82D6]/15 transition-colors duration-300"
             >
-              Show More
+              {t.work.showMore}
             </button>
           </div>
         )}

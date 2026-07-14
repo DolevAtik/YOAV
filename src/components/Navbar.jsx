@@ -1,14 +1,25 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '../i18n/LanguageContext'
 
-const navLinks = [
-  { label: 'Portfolio', href: '#work'    },
-  { label: 'About',   href: '#about'   },
-  { label: 'Contact', href: '#contact' },
-]
+function GlobeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-3 h-3 shrink-0">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18" strokeLinecap="round" />
+    </svg>
+  )
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const { t, toggleLang } = useLanguage()
+
+  const navLinks = [
+    { label: t.nav.work,    href: '#work'    },
+    { label: t.nav.about,   href: '#about'   },
+    { label: t.nav.contact, href: '#contact' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -37,7 +48,7 @@ export default function Navbar() {
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center shrink-0"
-            aria-label="Yoav Zadikov — Home"
+            aria-label={t.nav.home}
           >
             <img
               src="/yz-logo.png"
@@ -48,17 +59,30 @@ export default function Navbar() {
           </button>
 
           {/* Nav links — always visible */}
-          <div className="flex items-center gap-5 sm:gap-8 md:gap-10">
+          <div className="flex items-center gap-3.5 sm:gap-7 md:gap-10">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => goto(link.href)}
-                className="relative text-[10px] sm:text-[11px] tracking-[0.18em] sm:tracking-[0.2em] text-white/80 hover:text-white transition-colors duration-300 uppercase group [text-shadow:0_1px_8px_rgba(0,0,0,0.6)]"
+                className="relative text-[10px] sm:text-[11px] tracking-[0.14em] sm:tracking-[0.2em] text-white/80 hover:text-white transition-colors duration-300 uppercase group [text-shadow:0_1px_8px_rgba(0,0,0,0.6)] whitespace-nowrap"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#5B82D6] group-hover:w-full transition-all duration-300" />
               </button>
             ))}
+
+            {/* Language toggle */}
+            <button
+              onClick={toggleLang}
+              aria-label={t.langToggleAria}
+              className="flex items-center gap-1.5 shrink-0 px-2 py-1 sm:px-2.5 sm:py-1.5 border border-white/15
+                         text-[10px] sm:text-[11px] tracking-[0.1em] text-white/70
+                         hover:text-[#5B82D6] hover:border-[#5B82D6]/50 transition-colors duration-300
+                         [text-shadow:0_1px_8px_rgba(0,0,0,0.6)]"
+            >
+              <GlobeIcon />
+              <span className="leading-none">{t.langToggle}</span>
+            </button>
           </div>
 
         </div>

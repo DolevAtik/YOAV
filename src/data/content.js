@@ -69,10 +69,11 @@ export const artists = [
   { id: 8, name: 'Artist Eight', genre: 'Drill / Rap' },
 ]
 
+// `key` maps into translations[lang].stats — see src/i18n/translations.js
 export const stats = [
-  { value: 80, suffix: '+', label: 'Music Videos' },
-  { value: 100, suffix: 'M+', label: 'Views' },
-  { value: 300, suffix: '+', label: 'Production Days' },
+  { value: 80, suffix: '+', key: 'musicVideos' },
+  { value: 100, suffix: 'M+', key: 'views' },
+  { value: 300, suffix: '+', key: 'productionDays' },
 ]
 
 // Update with real contact links

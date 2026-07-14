@@ -1,7 +1,10 @@
 import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function VideoModal({ project, onClose }) {
+  const { t, lang } = useLanguage()
+
   useEffect(() => {
     document.body.style.overflow = project ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -38,7 +41,7 @@ export default function VideoModal({ project, onClose }) {
             <div className="flex items-end justify-between mb-5">
               <div>
                 <p className="text-[9px] tracking-[0.4em] text-[#5B82D6] uppercase mb-1.5">
-                  {project.artist}
+                  {project.artist[lang]}
                 </p>
                 <h3 className="font-display font-semibold text-white text-2xl md:text-3xl leading-tight">
                   {project.title}
@@ -46,8 +49,8 @@ export default function VideoModal({ project, onClose }) {
               </div>
               <button
                 onClick={onClose}
-                aria-label="Close"
-                className="text-white/30 hover:text-white transition-colors duration-200 p-1.5 ml-6 shrink-0"
+                aria-label={t.modal.close}
+                className="text-white/30 hover:text-white transition-colors duration-200 p-1.5 ms-6 shrink-0"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} className="w-5 h-5">
                   <path strokeLinecap="round" d="M6 18L18 6M6 6l12 12" />

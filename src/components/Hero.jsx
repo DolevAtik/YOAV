@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const THUMBS = [
   'JET VAZANA - JAR JAR.jpg', 'JET VAZANA – SEO ANTHEM.jpg', 'Ni_a.jpg',
@@ -46,19 +47,13 @@ function PosterRow({ items, reverse, duration }) {
   )
 }
 
-const TICKER_ITEMS = [
-  'Director', '·', 'Producer', '·', 'Editor', '·',
-  'Motion Graphics', '·', 'Music Videos', '·', 'Commercials', '·',
-  'Visual Storytelling', '·', 'Cinematography', '·',
-  'Director', '·', 'Producer', '·', 'Editor', '·',
-  'Motion Graphics', '·', 'Music Videos', '·', 'Commercials', '·',
-  'Visual Storytelling', '·', 'Cinematography', '·',
-  'Director', '·', 'Producer', '·', 'Editor', '·',
-  'Motion Graphics', '·', 'Music Videos', '·', 'Commercials', '·',
-  'Visual Storytelling', '·', 'Cinematography', '·',
-]
+// The ticker animation translates by -33.333%, so the list must be exactly 3 loops.
+const buildTicker = (words) =>
+  Array.from({ length: 3 }, () => words.flatMap((w) => [w, '·'])).flat()
 
 export default function Hero() {
+  const { t } = useLanguage()
+  const tickerItems = buildTicker(t.hero.ticker)
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const titleY    = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
@@ -104,7 +99,7 @@ export default function Hero() {
                    pt-14 md:pt-0"
       >
         {/* YZ PRODUCTIONS — single H1 split across two lines for visual effect */}
-        <h1 className="sr-only">YZ Productions — Music Video Director &amp; Producer</h1>
+        <h1 className="sr-only">{t.hero.srTitle}</h1>
         <div className="overflow-hidden mb-2 md:mb-4" aria-hidden="true">
           <motion.img
             src="/yz-icon.png"
@@ -145,7 +140,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 1 }}
           className="font-display italic text-white/75 text-sm md:text-xl tracking-wide mb-[3vh] md:mb-14 [text-shadow:0_1px_10px_rgba(0,0,0,0.7)]"
         >
-          Creating visual stories through music, culture and cinema.
+          {t.hero.tagline}
         </motion.p>
 
         {/* CTAs */}
@@ -160,7 +155,7 @@ export default function Hero() {
             className="group relative px-8 py-3.5 md:px-10 md:py-4 bg-[#1E3A8A]/70 backdrop-blur-sm text-white text-[11px] tracking-[0.3em] uppercase font-semibold overflow-hidden w-full sm:w-auto"
           >
             <span className="relative z-10 group-hover:text-[#1E3A8A] transition-colors duration-300">
-              View Portfolio
+              {t.hero.viewPortfolio}
             </span>
             <div className="absolute inset-0 bg-white -translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out" />
           </button>
@@ -168,7 +163,7 @@ export default function Hero() {
             onClick={() => goto('contact')}
             className="px-8 py-3.5 md:px-10 md:py-4 border border-white/40 bg-[#0B0B0B]/40 backdrop-blur-sm text-white/90 text-[11px] tracking-[0.3em] uppercase hover:border-white hover:text-white transition-all duration-400 w-full sm:w-auto"
           >
-            Contact
+            {t.hero.contact}
           </button>
         </motion.div>
       </motion.div>
@@ -181,7 +176,7 @@ export default function Hero() {
         className="relative z-10 shrink-0 overflow-hidden border-t border-b border-white/[0.04] py-3 mb-2"
       >
         <div className="marquee-track text-[9px] tracking-[0.35em] uppercase text-white/18">
-          {TICKER_ITEMS.map((item, i) => (
+          {tickerItems.map((item, i) => (
             <span key={i} className={item === '·' ? 'text-[#5B82D6]/35' : ''}>
               {item}
             </span>

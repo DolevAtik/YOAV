@@ -81,6 +81,9 @@
   display: flex;
   gap: 3rem;
   white-space: nowrap;
+  /* Both tracks scroll by a negative translateX, so their item order must stay
+     left-to-right even when the page is in RTL (Hebrew). */
+  direction: ltr;
   animation: ticker 7s linear infinite;
   will-change: transform;
   transform: translateZ(0);
@@ -132,6 +135,7 @@
 .poster-track {
   display: flex;
   width: max-content;
+  direction: ltr;
   animation: poster-drift linear infinite;
   will-change: transform;
   transform: translateZ(0);

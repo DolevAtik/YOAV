@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { socialLinks } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const InstagramIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-[14px] h-[14px]">
@@ -20,14 +21,15 @@ const WhatsAppIcon = () => (
 )
 
 const BUTTONS = [
-  { href: socialLinks.instagram, icon: <InstagramIcon />, label: 'Instagram', external: true,  variant: 'outline' },
-  { href: socialLinks.email,     icon: <EmailIcon />,     label: 'Email',     external: false, variant: 'filled'  },
-  { href: socialLinks.whatsapp,  icon: <WhatsAppIcon />,  label: 'WhatsApp',  external: true,  variant: 'outline' },
+  { key: 'instagram', href: socialLinks.instagram, icon: <InstagramIcon />, external: true,  variant: 'outline' },
+  { key: 'email',     href: socialLinks.email,     icon: <EmailIcon />,     external: false, variant: 'filled'  },
+  { key: 'whatsapp',  href: socialLinks.whatsapp,  icon: <WhatsAppIcon />,  external: true,  variant: 'outline' },
 ]
 
 export default function Contact() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+  const { t } = useLanguage()
 
   return (
     <section id="contact" className="py-28 md:py-44 border-t border-white/[0.04]">
@@ -41,7 +43,7 @@ export default function Contact() {
           className="flex items-center justify-center gap-5 mb-10"
         >
           <div className="w-6 h-px bg-[#5B82D6]/50" />
-          <p className="text-[9px] tracking-[0.55em] text-[#5B82D6] uppercase">Get In Touch</p>
+          <p className="text-[9px] tracking-[0.55em] text-[#5B82D6] uppercase">{t.contact.label}</p>
           <div className="w-6 h-px bg-[#5B82D6]/50" />
         </motion.div>
 
@@ -54,7 +56,7 @@ export default function Contact() {
             className="font-display font-bold text-white leading-tight"
             style={{ fontSize: 'clamp(1.6rem, 6vw, 5.5rem)', letterSpacing: '-0.025em' }}
           >
-            Let's Create Something
+            {t.contact.line1}
           </motion.h2>
         </div>
         <div className="overflow-hidden mb-16">
@@ -65,7 +67,7 @@ export default function Contact() {
             className="font-display font-bold text-[#5B82D6] leading-tight"
             style={{ fontSize: 'clamp(1.6rem, 6vw, 5.5rem)', letterSpacing: '-0.025em' }}
           >
-            Extraordinary
+            {t.contact.line2}
           </motion.h2>
         </div>
 
@@ -76,9 +78,9 @@ export default function Contact() {
           transition={{ duration: 0.9, delay: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3"
         >
-          {BUTTONS.map(({ href, icon, label, external, variant }) => (
+          {BUTTONS.map(({ key, href, icon, external, variant }) => (
             <motion.a
-              key={label}
+              key={key}
               href={href}
               target={external ? '_blank' : undefined}
               rel={external ? 'noopener noreferrer' : undefined}
@@ -92,7 +94,7 @@ export default function Contact() {
               }`}
             >
               {icon}
-              {label}
+              {t.contact[key]}
             </motion.a>
           ))}
         </motion.div>

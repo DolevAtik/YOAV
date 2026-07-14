@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { stats } from '../data/content'
+import { useLanguage } from '../i18n/LanguageContext'
 
 function useCountUp(target, active) {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function Stat({ stat, index }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
   const count = useCountUp(stat.value, inView)
+  const { t } = useLanguage()
 
   return (
     <motion.div
@@ -46,11 +48,13 @@ function Stat({ stat, index }) {
           {stat.suffix}
         </span>
       </div>
-      <p className="text-[8px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.45em] text-white/30 uppercase">{stat.label}</p>
+      <p className="text-[8px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.45em] text-white/30 uppercase">
+        {t.stats[stat.key]}
+      </p>
 
-      {/* Right divider — not on last */}
+      {/* Trailing divider — not on last. `end-0` mirrors automatically in RTL. */}
       {index < 2 && (
-        <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-16 bg-white/[0.05]" />
+        <div className="hidden md:block absolute end-0 top-1/2 -translate-y-1/2 w-px h-16 bg-white/[0.05]" />
       )}
     </motion.div>
   )
@@ -61,7 +65,7 @@ export default function Statistics() {
     <section className="border-t border-b border-white/[0.04] bg-[#0D1526]">
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-3 gap-x-4 md:gap-x-10">
-          {stats.map((s, i) => <Stat key={s.label} stat={s} index={i} />)}
+          {stats.map((s, i) => <Stat key={s.key} stat={s} index={i} />)}
         </div>
       </div>
     </section>

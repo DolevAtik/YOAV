@@ -9,10 +9,12 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import StructuredData from './components/StructuredData'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from './i18n/LanguageContext'
 
 export default function App() {
   const [loaded, setLoaded] = useState(false)
   const onLoaderComplete = useCallback(() => setLoaded(true), [])
+  const { lang, dir } = useLanguage()
 
   return (
     <>
@@ -23,6 +25,8 @@ export default function App() {
       <AnimatePresence>
         {loaded && (
           <motion.div
+            dir={dir}
+            lang={lang}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}

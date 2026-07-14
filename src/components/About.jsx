@@ -1,8 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import SectionTitle from './SectionTitle'
-
-const skills = ['Music Videos', 'TV & Micro-Drama', 'Commercials', 'Post-Production']
+import { useLanguage } from '../i18n/LanguageContext'
 
 const ARTICLE_URL = 'https://13tv.co.il/item/entertainment/television/ve22s-905247653/'
 
@@ -17,6 +16,7 @@ function ArrowIcon() {
 function PressFeature() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+  const { t, dir } = useLanguage()
 
   return (
     <div ref={ref} className="mt-24 md:mt-36 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -31,7 +31,7 @@ function PressFeature() {
         <div className="group relative aspect-[3/4] overflow-hidden bg-[#0f0f0f]">
           <img
             src="/premiere.jpg"
-            alt='Yoav Zadikov holding the "Double Lives" poster at the Reshet 13 premiere'
+            alt={t.press.photoAlt}
             width="1200"
             height="1600"
             loading="lazy"
@@ -40,13 +40,13 @@ function PressFeature() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/60 via-transparent to-transparent pointer-events-none" />
 
           {/* Corner marks */}
-          <div className="absolute top-4 left-4 w-7 h-7 border-t border-l border-[#5B82D6]/30 pointer-events-none" />
-          <div className="absolute bottom-4 right-4 w-7 h-7 border-b border-r border-[#5B82D6]/30 pointer-events-none" />
+          <div className="absolute top-4 start-4 w-7 h-7 border-t border-s border-[#5B82D6]/30 pointer-events-none" />
+          <div className="absolute bottom-4 end-4 w-7 h-7 border-b border-e border-[#5B82D6]/30 pointer-events-none" />
 
           {/* Caption inside frame */}
           <div className="absolute bottom-0 left-0 right-0 p-5">
-            <p className="text-[9px] tracking-[0.35em] text-[#5B82D6] uppercase mb-1">Premiere Night</p>
-            <p className="font-display font-semibold text-white text-sm">"Double Lives" — Reshet 13</p>
+            <p className="text-[9px] tracking-[0.35em] text-[#5B82D6] uppercase mb-1">{t.press.captionLabel}</p>
+            <p className="font-display font-semibold text-white text-sm">{t.press.caption}</p>
           </div>
         </div>
 
@@ -55,10 +55,10 @@ function PressFeature() {
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="absolute -top-4 -right-3 md:-right-5 bg-[#1E3A8A] px-4 py-3"
+          className="absolute -top-4 -end-3 md:-end-5 bg-[#1E3A8A] px-4 py-3"
         >
           <p className="text-[8px] tracking-[0.25em] uppercase font-semibold text-white leading-loose">
-            Director<br />חיים כפולים
+            {t.press.badgeLine1}<br />{t.press.badgeLine2}
           </p>
         </motion.div>
       </motion.div>
@@ -73,35 +73,37 @@ function PressFeature() {
         {/* Label */}
         <div className="flex items-center gap-4 mb-6">
           <div className="w-5 h-px bg-[#5B82D6]/50" />
-          <p className="text-[9px] tracking-[0.5em] text-[#5B82D6] uppercase font-medium">In the Press — Reshet 13</p>
+          <p className="text-[9px] tracking-[0.5em] text-[#5B82D6] uppercase font-medium">{t.press.label}</p>
         </div>
 
-        {/* Hebrew pull-quote */}
-        <blockquote dir="rtl" lang="he" className="relative">
-          <span aria-hidden="true" className="absolute -top-6 right-0 font-display text-7xl leading-none text-[#5B82D6]/15 select-none">"</span>
+        {/* Pull-quote */}
+        <blockquote className="relative">
+          <span
+            aria-hidden="true"
+            className="absolute -top-6 start-0 font-display text-7xl leading-none text-[#5B82D6]/15 select-none"
+          >
+            "
+          </span>
           <p
             className="font-display font-bold text-white leading-snug"
             style={{ fontSize: 'clamp(1.5rem, 3.2vw, 2.5rem)', letterSpacing: '-0.01em' }}
           >
-            לא למדתי בבית ספר לקולנוע — לימדתי את עצמי הכול
+            {t.press.quote}
           </p>
-          <footer className="mt-4 text-[10px] tracking-[0.3em] text-white/30 uppercase" dir="ltr">
-            Yoav Zadikov — 13tv Special Interview
+          <footer className="mt-4 text-[10px] tracking-[0.3em] text-white/30 uppercase" dir={dir}>
+            {t.press.quoteSource}
           </footer>
         </blockquote>
 
         <p className="mt-7 text-sm text-white/35 leading-[1.9] max-w-xl">
-          In a special interview with Reshet 13, Yoav opens up about directing
-          "Double Lives" (חיים כפולים) — the most successful micro-drama in Israel —
-          becoming the youngest director in the country to create a series for a major
-          broadcaster, the fearless leap into deep water, and what's next.
+          {t.press.body}
         </p>
 
         {/* Stage photo strip */}
         <div className="group relative mt-9 overflow-hidden bg-[#0f0f0f]">
           <img
             src="/press-stage2.jpeg"
-            alt="Yoav Zadikov speaking on stage at the Double Lives premiere event"
+            alt={t.press.stageAlt}
             width="4344"
             height="7728"
             loading="lazy"
@@ -109,8 +111,8 @@ function PressFeature() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/70 via-transparent to-transparent pointer-events-none" />
           <div className="absolute inset-0 border border-[#5B82D6]/0 group-hover:border-[#5B82D6]/25 transition-colors duration-500 pointer-events-none" />
-          <p className="absolute bottom-3 left-4 text-[9px] tracking-[0.35em] text-white/50 uppercase">
-            Tel Aviv — Premiere Event
+          <p className="absolute bottom-3 start-4 text-[9px] tracking-[0.35em] text-white/50 uppercase">
+            {t.press.stageCaption}
           </p>
         </div>
 
@@ -122,7 +124,7 @@ function PressFeature() {
           className="group inline-flex items-center gap-3 mt-9 text-[#5B82D6] hover:text-white transition-colors duration-400"
         >
           <span className="text-[10px] tracking-[0.35em] uppercase font-medium border-b border-[#5B82D6]/30 group-hover:border-white/40 pb-1 transition-colors duration-400">
-            Read the Full Article
+            {t.press.cta}
           </span>
           <ArrowIcon />
         </a>
@@ -134,6 +136,7 @@ function PressFeature() {
 export default function About() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+  const { t } = useLanguage()
 
   return (
     <section id="about" className="py-24 md:py-36 border-t border-white/[0.04]">
@@ -148,11 +151,11 @@ export default function About() {
             className="relative hidden lg:block"
           >
             <div className="relative aspect-[3/4] overflow-hidden max-w-xs mx-auto">
-              <img src="/ABOUT.jpg" alt="Yoav Zadikov" className="w-full h-full object-cover" />
+              <img src="/ABOUT.jpg" alt={t.about.portraitAlt} className="w-full h-full object-cover" />
 
               {/* Corner marks */}
-              <div className="absolute top-4 left-4 w-7 h-7 border-t border-l border-[#5B82D6]/30 pointer-events-none" />
-              <div className="absolute bottom-4 right-4 w-7 h-7 border-b border-r border-[#5B82D6]/30 pointer-events-none" />
+              <div className="absolute top-4 start-4 w-7 h-7 border-t border-s border-[#5B82D6]/30 pointer-events-none" />
+              <div className="absolute bottom-4 end-4 w-7 h-7 border-b border-e border-[#5B82D6]/30 pointer-events-none" />
             </div>
 
             {/* Floating badge */}
@@ -160,10 +163,10 @@ export default function About() {
               initial={{ opacity: 0, y: 10 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute -bottom-5 -right-3 md:-right-6 bg-[#1E3A8A] px-5 py-4"
+              className="absolute -bottom-5 -end-3 md:-end-6 bg-[#1E3A8A] px-5 py-4"
             >
               <p className="text-[8px] tracking-[0.25em] uppercase font-semibold text-white leading-loose">
-                Director<br />& Producer
+                {t.about.badgeLine1}<br />{t.about.badgeLine2}
               </p>
             </motion.div>
           </motion.div>
@@ -176,34 +179,29 @@ export default function About() {
           >
             <div className="flex items-start justify-between lg:block">
               <div className="flex-1">
-                <SectionTitle label="Biography" title="ABOUT" />
+                <SectionTitle label={t.about.label} title={t.about.title} />
               </div>
               {/* Small portrait — mobile only */}
-              <div className="block lg:hidden w-28 h-36 ml-4 shrink-0 overflow-hidden">
-                <img src="/ABOUT.jpg" alt="Yoav Zadikov" className="w-full h-full object-cover" />
+              <div className="block lg:hidden w-28 h-36 ms-4 shrink-0 overflow-hidden">
+                <img src="/ABOUT.jpg" alt={t.about.portraitAlt} className="w-full h-full object-cover" />
               </div>
             </div>
 
             <div className="mt-8 space-y-5">
               <p className="font-display italic text-white/45 text-lg md:text-xl leading-relaxed">
-                Yoav Zadikov is a director, producer and editor specializing in music videos,
-                television and visual storytelling.
+                {t.about.lead}
               </p>
               <p className="text-sm text-white/35 leading-[1.9]">
-                After directing music videos for Nasrin Kadri, Raviv Kaner and more of Israel's
-                biggest artists, Yoav stepped into television — directing "Double Lives"
-                (חיים כפולים), Reshet 13's hit micro-drama, and becoming the youngest director
-                in Israel to helm a series for a major broadcaster.
+                {t.about.body1}
               </p>
               <p className="text-sm text-white/35 leading-[1.9]">
-                His work combines cinematic aesthetics, strong visual narratives and
-                contemporary culture — crafting images that resonate long after the screen goes dark.
+                {t.about.body2}
               </p>
             </div>
 
             {/* Skill list */}
             <div className="mt-10 grid grid-cols-2 gap-3">
-              {skills.map((skill, i) => (
+              {t.about.skills.map((skill, i) => (
                 <motion.div
                   key={skill}
                   initial={{ opacity: 0 }}
