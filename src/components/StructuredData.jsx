@@ -4,10 +4,10 @@ export default function StructuredData() {
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'https://yoav-steel.vercel.app/#person',
+        '@id': 'https://yoavzadikov.com/#person',
         name: 'Yoav Zadikov',
-        url: 'https://yoav-steel.vercel.app',
-        image: 'https://yoav-steel.vercel.app/ABOUT.jpg',
+        url: 'https://yoavzadikov.com',
+        image: 'https://yoavzadikov.com/ABOUT.jpg',
         jobTitle: ['Director', 'Producer', 'Editor'],
         description:
           'Yoav Zadikov is a music video director, producer and editor based in Israel, specializing in visual storytelling, commercial productions and cinematic content.',
@@ -29,19 +29,19 @@ export default function StructuredData() {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://yoav-steel.vercel.app/#website',
-        url: 'https://yoav-steel.vercel.app',
+        '@id': 'https://yoavzadikov.com/#website',
+        url: 'https://yoavzadikov.com',
         name: 'Yoav Zadikov — Director & Producer',
         description:
           'Portfolio of Yoav Zadikov — music video director, producer and editor based in Israel.',
-        publisher: { '@id': 'https://yoav-steel.vercel.app/#person' },
+        publisher: { '@id': 'https://yoavzadikov.com/#person' },
         inLanguage: 'en',
       },
       {
         '@type': 'CreativeWork',
-        '@id': 'https://yoav-steel.vercel.app/#portfolio',
+        '@id': 'https://yoavzadikov.com/#portfolio',
         name: 'Yoav Zadikov Portfolio',
-        creator: { '@id': 'https://yoav-steel.vercel.app/#person' },
+        creator: { '@id': 'https://yoavzadikov.com/#person' },
         about: [
           'Music Videos',
           'Commercial Productions',

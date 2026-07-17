@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yoav-steel.vercel.app/sitemap.xml
+Sitemap: https://yoavzadikov.com/sitemap.xml
