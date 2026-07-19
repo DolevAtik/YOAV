@@ -227,10 +227,10 @@ const projects = [
 ]
 
 // Fixed display order for the first releases, by project id:
-// 1. נסרין – שיר באוטו, 2. רון חיון – אחת למליון, 3. אנה זק – ילד שמנת,
-// 4. ליאם גולן – אוהב או שונא, 5. רביב כנר – כיסופים, 6. דודא גאנג – אוי ואבוי,
-// 7. עדן דרסו – פוטנציאל, 8. Jet Vazana – Jar Jar. The rest are shuffled on each load.
-const pinnedIds = [19, 16, 4, 13, 25, 22, 8, 1]
+// 1. ליעד מאיר – וורסים, 2. רון חיון – אחת ממיליון, 3. אנה זק – ילד שמנת,
+// 4. ליאם גולן – אוהב או שונא, 5. Jet Vazana – Seo Anthem, 6. Jet Vazana – Jar Jar,
+// 7. ליעד מאיר – Bad Bitch, 8. דודא גאנג – אוי ואבוי. The rest are shuffled on each load.
+const pinnedIds = [27, 16, 4, 13, 2, 1, 5, 22]
 
 const pinned = pinnedIds
   .map((id) => projects.find((p) => p.id === id))
