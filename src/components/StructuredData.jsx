@@ -7,7 +7,7 @@ export default function StructuredData() {
         '@id': 'https://yoavzadikov.com/#person',
         name: 'Yoav Zadikov',
         url: 'https://yoavzadikov.com',
-        image: 'https://yoavzadikov.com/ABOUT.jpg',
+        image: 'https://yoavzadikov.com/og-image.jpg',
         jobTitle: ['Director', 'Producer', 'Editor'],
         description:
           'Yoav Zadikov is a music video director, producer and editor based in Israel, specializing in visual storytelling, commercial productions and cinematic content.',
