@@ -224,13 +224,38 @@ const projects = [
     youtubeId: 'QsKyG7MiXjM',
   },
 
+  {
+    id: 28,
+    title: 'לא כל כך',
+    artist: { en: 'Yahav x Tesfu Vbitcha', he: 'יהב x טספו וביצ׳ה' },
+    thumbnail: '/thumbnails/loKolKach.jpg',
+    youtubeId: 'JEuxEuB3FAU',
+  },
+
+  {
+    id: 29,
+    title: 'חצופה',
+    artist: { en: 'LifeSwisa', he: 'LifeSwisa' },
+    thumbnail: '/thumbnails/hatzufa.jpg',
+    youtubeId: 'RerlnJ-J5ig',
+  },
+
+  {
+    id: 30,
+    title: 'גולגול מנקות',
+    artist: { en: 'Young Bota', he: 'יאנג בוטה' },
+    thumbnail: '/thumbnails/youngBota.jpg',
+    youtubeId: 'fnp0aYw-w1E',
+  },
+
 ]
 
 // Fixed display order for the first releases, by project id:
-// 1. ליעד מאיר – וורסים, 2. רון חיון – אחת ממיליון, 3. אנה זק – ילד שמנת,
-// 4. ליאם גולן – אוהב או שונא, 5. Jet Vazana – Seo Anthem, 6. Jet Vazana – Jar Jar,
-// 7. ליעד מאיר – Bad Bitch, 8. דודא גאנג – אוי ואבוי. The rest are shuffled on each load.
-const pinnedIds = [27, 16, 4, 13, 2, 1, 5, 22]
+// Row 1: ליעד מאיר – וורסים, רון חיון – אחת ממיליון, אנה זק – ילד שמנת
+// Row 2: יהב x טספו וביצ׳ה – לא כל כך, LifeSwisa – חצופה, יאנג בוטה – גולגול מנקות
+// Then: ליאם גולן – אוהב או שונא, Jet Vazana – Seo Anthem, Jet Vazana – Jar Jar,
+// ליעד מאיר – Bad Bitch, דודא גאנג – אוי ואבוי. The rest are shuffled on each load.
+const pinnedIds = [27, 16, 4, 28, 29, 30, 13, 2, 1, 5, 22]
 
 const pinned = pinnedIds
   .map((id) => projects.find((p) => p.id === id))
